@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Debug\
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Debug\
 WpfApplication1
 none
 false
 DEBUG;TRACE
-C:\private\source\counterStrike\WpfApplication1\WpfApplication1\App.xaml
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\App.xaml
 11151548125
 
 7-983660855
 13738642453
 MainWindow.xaml;
 
-True
+False
 

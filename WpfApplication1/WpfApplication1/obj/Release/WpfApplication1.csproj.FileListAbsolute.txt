@@ -1,0 +1,15 @@
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\bin\Release\WpfApplication1.exe.config
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\bin\Release\WpfApplication1.exe
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\bin\Release\WpfApplication1.pdb
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\MainWindow.g.cs
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\App.g.cs
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1_MarkupCompile.cache
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1_MarkupCompile.lref
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\MainWindow.baml
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1.g.resources
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1.Properties.Resources.resources
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1.csproj.GenerateResource.Cache
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1.exe
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1.pdb
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1.csprojResolveAssemblyReference.cache
+P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Release\GeneratedInternalTypeHelper.g.cs

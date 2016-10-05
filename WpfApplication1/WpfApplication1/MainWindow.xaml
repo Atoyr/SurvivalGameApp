@@ -11,12 +11,9 @@
     <Window.Background>
         <ImageBrush ImageSource = "/WpfApplication1;component/resource/iphonewallpapercamo8.jpg"  Stretch="UniformToFill"/>
     </Window.Background>
-    <Window.DataContext>
-        <local:If />
-    </Window.DataContext>
     <Border BorderBrush="Red"
-            BorderThickness="1" >
-        <Grid x:Name="gird1" ShowGridLines="True" RenderTransformOrigin="0.39,0.487" >
+            BorderThickness="0" >
+        <Grid x:Name="gird1" ShowGridLines="false" RenderTransformOrigin="0.39,0.487" DataContext="wpfIf" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
                 <RowDefinition Height="200" />
@@ -49,6 +46,18 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="{Binding ImgPassword0}"/>
+                    <Image Grid.Column="1" Source="{Binding ImgPassword1}"/>
+                    <Image Grid.Column="2" Source="{Binding ImgPassword2}"/>
+                    <Image Grid.Column="3" Source="{Binding ImgPassword3}"/>
+                    <Image Grid.Column="4" Source="{Binding ImgPassword4}"/>
+                    <Image Grid.Column="5" Source="{Binding ImgPassword5}"/>
+                    <Image Grid.Column="6" Source="{Binding ImgPassword6}"/>
+                    <Image Grid.Column="7" Source="{Binding ImgPassword7}"/>
+                    <Image Grid.Column="8" Source="{Binding ImgPassword8}"/>
+                    <Image Grid.Column="9" Source="{Binding ImgPassword9}"/>
+                    <Image Grid.Column="10" Source="{Binding ImgPassword10}"/>
+                    <Image Grid.Column="11" Source="{Binding ImgPassword11}"/>
                 </Grid>
             </Border>
             <Border BorderBrush="Gray" BorderThickness="15"  Grid.Row="2" Grid.Column="1" Margin="30" >
@@ -64,18 +73,18 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Row="0" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="1" FontSize="50"/>
-                    <Button Grid.Row="0" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="2" FontSize="50" />
-                    <Button Grid.Row="0" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="3" FontSize="50" />
-                    <Button Grid.Row="1" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="4" FontSize="50" />
-                    <Button Grid.Row="1" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="5" FontSize="50" />
-                    <Button Grid.Row="1" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="6" FontSize="50" />
-                    <Button Grid.Row="2" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="7" FontSize="50" />
-                    <Button Grid.Row="2" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="8" FontSize="50" />
-                    <Button Grid.Row="2" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="9" FontSize="50" />
-                    <Button Grid.Row="3" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="C" FontSize="50" />
-                    <Button Grid.Row="3" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="0" FontSize="50" />
-                    <Button Grid.Row="3" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="Ent" FontSize="50" />
+                    <Button Name="Button1" Grid.Row="0" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="1" FontSize="50" Click="Button1_Click"/>
+                    <Button Name="Button2" Grid.Row="0" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="2" FontSize="50" />
+                    <Button Name="Button3" Grid.Row="0" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="3" FontSize="50" />
+                    <Button Name="Button4" Grid.Row="1" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="4" FontSize="50" />
+                    <Button Name="Button5" Grid.Row="1" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="5" FontSize="50" />
+                    <Button Name="Button6" Grid.Row="1" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="6" FontSize="50" />
+                    <Button Name="Button7" Grid.Row="2" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="7" FontSize="50" />
+                    <Button Name="Button8" Grid.Row="2" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="8" FontSize="50" />
+                    <Button Name="Button9" Grid.Row="2" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="9" FontSize="50" />
+                    <Button Name="ButtonC" Grid.Row="3" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="C" FontSize="50" />
+                    <Button Name="Button0" Grid.Row="3" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="0" FontSize="50" />
+                    <Button Name="ButtonEnt" Grid.Row="3" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="Ent" FontSize="50" />
                 </Grid>
             </Border>
             <Grid  Grid.Row="2" Grid.Column="2">
@@ -83,7 +92,7 @@
                     <RowDefinition Height ="*" />
                     <RowDefinition Height ="*" />
                 </Grid.RowDefinitions>
-                <Border BorderBrush="Gray" BorderThickness="15"  Grid.Row="0" Grid.Column="0" Margin="30" >
+                <Border Name="TimeArea" BorderBrush="Gray" BorderThickness="15"  Grid.Row="0" Grid.Column="0" Margin="30" Visibility="Visible" >
                     <Grid Margin="0" Background="Black">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -92,11 +101,23 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" />
-                        <Image Grid.Column="1" />
+                        <Image Grid.Column="0" Source="{Binding ImgTimeTenPosHour}"/>
+                        <Image Grid.Column="1" Source="{Binding ImgTimeOnePosHour}"/>
                         <Image Grid.Column="2" Source="{Binding ImgTimeKoron}" />
-                        <Image Grid.Column="3" />
-                        <Image Grid.Column="4" />
+                        <Image Grid.Column="3" Source="{Binding ImgTimeTenPosMin}"/>
+                        <Image Grid.Column="4" Source="{Binding ImgTimeOnePosMin}"/>
+                    </Grid>
+                </Border>
+                <Border Name="SettingArea" BorderBrush="Gray" BorderThickness="15"  Grid.Row="1" Grid.Column="0" Margin="30" Visibility="Visible" >
+                    <Grid Margin="0" Background="Black">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Content="パスワード設定" FontSize="20"/>
+                        <Button Grid.Column="1" Content="時間設定" FontSize="20"/>
+                        <Button Grid.Column="2" Content="START" FontSize="20"/>
                     </Grid>
                 </Border>
             </Grid>

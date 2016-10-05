@@ -21,19 +21,69 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         private If wpfIf;
+        private Logic wpfLogic;
 
         public MainWindow()
         {
             InitializeComponent();
+            init();
         }
 
         private void init()
         {
             wpfIf = new If();
+            wpfLogic = new Logic();
 
-            //wpfIf.ImgTimeKoron = new BitmapImage(new Uri("/WpfApplication1;component/resource/iphonewallpapercamo8.jpg"));
-            wpfIf.ImgTimeKoron = new BitmapImage(new Uri(@"/resource/8.jpg"));
-            wpfIf.ImgTimeKoron = new BitmapImage();
+            this.gird1.DataContext = wpfIf;
+        }
+
+        private void updatePasswordArea()
+        {
+            for(int i = 0; i < wpfLogic.passwords.Length; i++)
+            {
+                switch (wpfLogic.passwords[i])
+                {
+                    case 0:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[0];
+                        break;
+                    case 1:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[1];
+                        break;
+                    case 2:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[2];
+                        break;
+                    case 3:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[3];
+                        break;
+                    case 4:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[4];
+                        break;
+                    case 5:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[5];
+                        break;
+                    case 6:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[6];
+                        break;
+                    case 7:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[7];
+                        break;
+                    case 8:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[8];
+                        break;
+                    case 9:
+                        wpfIf.ImgPasswords[i] = wpfIf.Segs[9];
+                        break;
+                    default:
+                        wpfIf.ImgPasswords[i] = wpfIf.blank;
+                        break;
+                }
+            }
+        }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            wpfLogic.passwords[0] = 1;
+            this.updatePasswordArea();
         }
     }
 }
