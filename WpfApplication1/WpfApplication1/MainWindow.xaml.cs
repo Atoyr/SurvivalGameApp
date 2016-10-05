@@ -32,7 +32,8 @@ namespace WpfApplication1
             wpfIf = new If();
 
             //wpfIf.ImgTimeKoron = new BitmapImage(new Uri("/WpfApplication1;component/resource/iphonewallpapercamo8.jpg"));
-            wpfIf.ImgTimeKoron = new BitmapImage(new Uri(@"/resource/iphonewallpapercamo8.jpg"));
+            wpfIf.ImgTimeKoron = new BitmapImage(new Uri(@"/resource/8.jpg"));
+            wpfIf.ImgTimeKoron = new BitmapImage();
         }
     }
 }

@@ -9,6 +9,12 @@ namespace WpfApplication1
     class logic
     {
 
-
+        public async void TimeCount()
+        {
+            await Task.Run(() =>
+           {
+               Thread.Sleap(5000);
+           });
+        }
     }
 }
