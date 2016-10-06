@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Icon="/WpfApplication1;component/resource/r0001-7bfb4.ico"
         Width="1280" Height="800"
-        Topmost="True" WindowStyle="None" WindowState="Maximized">
+        Topmost="True" WindowStyle="None" WindowState="Maximized" PreviewKeyDown="Window_PreviewKeyDown">
     <Window.Background>
         <ImageBrush ImageSource = "/WpfApplication1;component/resource/iphonewallpapercamo8.jpg"  Stretch="UniformToFill"/>
     </Window.Background>
     <Border BorderBrush="Red"
             BorderThickness="0" >
-        <Grid x:Name="gird1" ShowGridLines="false" RenderTransformOrigin="0.39,0.487" DataContext="wpfIf" >
+        <Grid x:Name="gird1" ShowGridLines="false" RenderTransformOrigin="0.39,0.487" DataContext="wpfIf">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
                 <RowDefinition Height="200" />
@@ -26,10 +26,14 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="50" />
             </Grid.ColumnDefinitions>
-            <StackPanel x:Name="StackPanel_LeftTop" Grid.Row="0" Grid.Column="0" />
-            <StackPanel x:Name="StackPanel_RightTop" Grid.Row="0" Grid.Column="3" />
-            <StackPanel x:Name="StackPanel_LeftButtom" Grid.Row="3" Grid.Column="0" />
-            <StackPanel x:Name="StackPanel_RightButtom" Grid.Row="3" Grid.Column="3" />
+            <StackPanel Grid.Row="0" Grid.Column="1" Margin="0" Orientation="Horizontal">
+                <Ellipse Name="redLump" Width="40" Height="40" Stroke="Silver" StrokeThickness="7" Margin="5" Fill="{Binding RedLumpBrush}" HorizontalAlignment="Left" />
+                <Ellipse Name="blueLump" Width="40" Height="40" Stroke="Silver" StrokeThickness="7" Margin="5" Fill="{Binding BlueLumpBrush}" HorizontalAlignment="Left" />
+            </StackPanel>
+            <StackPanel x:Name="StackPanel_LeftTop" Grid.Row="0" Grid.Column="0" Margin="0" Background="Green" Opacity="0" MouseLeftButtonDown="StackPanel_LeftTop_MouseLeftButtonDown" />
+            <StackPanel x:Name="StackPanel_RightTop" Grid.Row="0" Grid.Column="3" Margin="0" Background="Green" Opacity="0"   MouseLeftButtonDown="StackPanel_RightTop_MouseLeftButtonDown" />
+            <StackPanel x:Name="StackPanel_LeftButtom" Grid.Row="3" Grid.Column="0" Margin="0" Background="Green" Opacity="0"   MouseLeftButtonDown="StackPanel_LeftButtom_MouseLeftButtonDown" />
+            <StackPanel x:Name="StackPanel_RightButtom" Grid.Row="3" Grid.Column="3" Margin="0" Background="Green" Opacity="0"   MouseLeftButtonDown="StackPanel_RightButtom_MouseLeftButtonDown" />
             <Border BorderBrush="Gray" BorderThickness="15"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
                 <Grid Margin="0" Background="Black">
                     <Grid.ColumnDefinitions>
@@ -73,27 +77,28 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Name="Button1" Grid.Row="0" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="1" FontSize="50" Click="Button1_Click"/>
-                    <Button Name="Button2" Grid.Row="0" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="2" FontSize="50" />
-                    <Button Name="Button3" Grid.Row="0" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="3" FontSize="50" />
-                    <Button Name="Button4" Grid.Row="1" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="4" FontSize="50" />
-                    <Button Name="Button5" Grid.Row="1" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="5" FontSize="50" />
-                    <Button Name="Button6" Grid.Row="1" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="6" FontSize="50" />
-                    <Button Name="Button7" Grid.Row="2" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="7" FontSize="50" />
-                    <Button Name="Button8" Grid.Row="2" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="8" FontSize="50" />
-                    <Button Name="Button9" Grid.Row="2" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="9" FontSize="50" />
-                    <Button Name="ButtonC" Grid.Row="3" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="C" FontSize="50" />
-                    <Button Name="Button0" Grid.Row="3" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="0" FontSize="50" />
-                    <Button Name="ButtonEnt" Grid.Row="3" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="Ent" FontSize="50" />
+                    <Button Name="Button1" Grid.Row="0" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="1" FontSize="50" Click="Button_Click"/>
+                    <Button Name="Button2" Grid.Row="0" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="2" FontSize="50" Click="Button_Click"/>
+                    <Button Name="Button3" Grid.Row="0" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="3" FontSize="50" Click="Button_Click"/>
+                    <Button Name="Button4" Grid.Row="1" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="4" FontSize="50" Click="Button_Click"/>
+                    <Button Name="Button5" Grid.Row="1" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="5" FontSize="50" Click="Button_Click"/>
+                    <Button Name="Button6" Grid.Row="1" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="6" FontSize="50" Click="Button_Click"/>
+                    <Button Name="Button7" Grid.Row="2" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="7" FontSize="50" Click="Button_Click"/>
+                    <Button Name="Button8" Grid.Row="2" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="8" FontSize="50" Click="Button_Click"/>
+                    <Button Name="Button9" Grid.Row="2" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="9" FontSize="50" Click="Button_Click"/>
+                    <Button Name="ButtonC" Grid.Row="3" Grid.Column="0" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="C" FontSize="50" Click="ButtonC_Click"/>
+                    <Button Name="Button0" Grid.Row="3" Grid.Column="1" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="0" FontSize="50" Click="Button_Click"/>
+                    <Button Name="ButtonEnt" Grid.Row="3" Grid.Column="2" Background="Gray" BorderBrush="Black" BorderThickness="5" Content="Ent" FontSize="50" Click="ButtonEnt_Click" />
                 </Grid>
             </Border>
             <Grid  Grid.Row="2" Grid.Column="2">
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height ="*" />
                     <RowDefinition Height ="*" />
                 </Grid.RowDefinitions>
-                <Border Name="TimeArea" BorderBrush="Gray" BorderThickness="15"  Grid.Row="0" Grid.Column="0" Margin="30" Visibility="Visible" >
-                    <Grid Margin="0" Background="Black">
+                <Border Name="TimeArea" BorderBrush="Gray" BorderThickness="15"  Grid.Row="0" Grid.Column="0" Margin="30" Visibility="Hidden" >
+                    <Grid Margin="0" Background="Black" MouseLeftButtonDown="Grid_MouseLeftButtonDown" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
@@ -108,16 +113,16 @@
                         <Image Grid.Column="4" Source="{Binding ImgTimeOnePosMin}"/>
                     </Grid>
                 </Border>
-                <Border Name="SettingArea" BorderBrush="Gray" BorderThickness="15"  Grid.Row="1" Grid.Column="0" Margin="30" Visibility="Visible" >
+                <Border Name="SettingArea" BorderBrush="Gray" BorderThickness="15"  Grid.Row="1" Grid.Column="0" Margin="30" Visibility="Hidden" >
                     <Grid Margin="0" Background="Black">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Content="パスワード設定" FontSize="20"/>
-                        <Button Grid.Column="1" Content="時間設定" FontSize="20"/>
-                        <Button Grid.Column="2" Content="START" FontSize="20"/>
+                        <Button Grid.Column="0" Content="更新" FontSize="20" Click="UpdateButton_Click"/>
+                        <Button Grid.Column="1" Content="リセット" FontSize="20"/>
+                        <Button Grid.Column="2" Content="閉じる" FontSize="20" Click="CloseButton_Click"/>
                     </Grid>
                 </Border>
             </Grid>

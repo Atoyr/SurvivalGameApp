@@ -12,7 +12,6 @@ C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Debug\WpfApp
 C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
 C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
 C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb
-C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Debug\GeneratedInternalTypeHelper.g.cs
 P:\Dev\git\counter\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.config
 P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
 P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb
@@ -28,3 +27,5 @@ P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.baml
 P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.g.resources
 P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
 P:\Dev\git\counter\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
+C:\private\source\counterStrike\WpfApplication1\WpfApplication1\bin\Debug\SmallBasicLibrary.dll
+C:\private\source\counterStrike\WpfApplication1\WpfApplication1\bin\Debug\SmallBasicLibrary.xml

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace WpfApplication1
 {
@@ -38,7 +39,8 @@ namespace WpfApplication1
         public BitmapImage blank;
 
         public BitmapImage[] Segs;
-        public BitmapImage[] ImgPasswords;
+
+        public const int PASSWORD_LENGTH = 12;
 
         public If()
         {
@@ -87,20 +89,6 @@ namespace WpfApplication1
             Segs[7] = segImg7;
             Segs[8] = segImg8;
             Segs[9] = segImg9;
-
-            ImgPasswords = new BitmapImage[12];
-            ImgPasswords[0] = ImgPassword0;
-            ImgPasswords[1] = ImgPassword1;
-            ImgPasswords[2] = ImgPassword2;
-            ImgPasswords[3] = ImgPassword3;
-            ImgPasswords[4] = ImgPassword4;
-            ImgPasswords[5] = ImgPassword5;
-            ImgPasswords[6] = ImgPassword6;
-            ImgPasswords[7] = ImgPassword7;
-            ImgPasswords[8] = ImgPassword8;
-            ImgPasswords[9] = ImgPassword9;
-            ImgPasswords[10] = ImgPassword10;
-            ImgPasswords[11] = ImgPassword11;
 
         }
 
@@ -213,5 +201,143 @@ namespace WpfApplication1
             get { return this.imgTimeOnePosMin; }
             set { this.SetProperty(ref this.imgTimeOnePosMin, value); }
         }
+
+        // ライト部分
+        private Brush redLumpBrush = Brushes.DarkRed;
+        public Brush RedLumpBrush
+        {
+            get { return this.redLumpBrush; }
+            set { this.SetProperty(ref this.redLumpBrush, value); }
+        }
+        private Brush blueLumpBrush = Brushes.DarkBlue;
+        public Brush BlueLumpBrush
+        {
+            get { return this.blueLumpBrush; }
+            set { this.SetProperty(ref this.blueLumpBrush, value); }
+        }
+
+        // ランプ点灯関連
+        bool isLightRed = false;
+        public bool IsLightRed
+        {
+            set
+            {
+                RedLumpBrush = value ? Brushes.Red : Brushes.DarkRed;
+                isLightRed = value;
+            }
+            get { return isLightRed; }
+        }
+        bool isLightBlue = false;
+        public bool IsLightBlue
+        {
+            set
+            {
+                BlueLumpBrush = value ? Brushes.Blue : Brushes.DarkBlue;
+                isLightBlue = value;
+            }
+            get { return isLightBlue; }
+        }
+
+
+        public void SetPasswordSeg(int pos,bool isAsuta)
+        {
+            BitmapImage tempBI;
+            tempBI = isAsuta ? segImgAsuta : blank;
+            SetPasswordSeg(pos, tempBI);
+        }
+
+        /// <summary>
+        /// PASSWORDに表示
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <param name="digit"></param>
+        public void SetPasswordSeg(int pos,int digit)
+        {
+            BitmapImage tempBI;
+            switch (digit)
+            {
+                case 0:
+                    tempBI = this.segImg0;
+                    break;
+                case 1:
+                    tempBI = this.segImg1;
+                    break;
+                case 2:
+                    tempBI = this.segImg2;
+                    break;
+                case 3:
+                    tempBI = this.segImg3;
+                    break;
+                case 4:
+                    tempBI = this.segImg4;
+                    break;
+                case 5:
+                    tempBI = this.segImg5;
+                    break;
+                case 6:
+                    tempBI = this.segImg6;
+                    break;
+                case 7:
+                    tempBI = this.segImg7;
+                    break;
+                case 8:
+                    tempBI = this.segImg8;
+                    break;
+                case 9:
+                    tempBI = this.segImg9;
+                    break;
+                default:
+                    tempBI = this.blank;
+                    break;
+            }
+
+            this.SetPasswordSeg(pos, tempBI);
+        }
+
+        public void SetPasswordSeg(int pos,BitmapImage bi)
+        {
+            switch (pos)
+            {
+                case 0:
+                    ImgPassword0 = bi;
+                    break;
+                case 1:
+                    ImgPassword1 = bi;
+                    break;
+                case 2:
+                    ImgPassword2 = bi;
+                    break;
+                case 3:
+                    ImgPassword3 = bi;
+                    break;
+                case 4:
+                    ImgPassword4 = bi;
+                    break;
+                case 5:
+                    ImgPassword5 = bi;
+                    break;
+                case 6:
+                    ImgPassword6 = bi;
+                    break;
+                case 7:
+                    ImgPassword7 = bi;
+                    break;
+                case 8:
+                    ImgPassword8 = bi;
+                    break;
+                case 9:
+                    ImgPassword9 = bi;
+                    break;
+                case 10:
+                    ImgPassword10 = bi;
+                    break;
+                case 11:
+                    ImgPassword11 = bi;
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 }
