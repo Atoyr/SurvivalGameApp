@@ -29,3 +29,5 @@ C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Release\WpfA
 C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1.csproj.GenerateResource.Cache
 C:\private\source\counterStrike\WpfApplication1\WpfApplication1\bin\Release\SmallBasicLibrary.dll
 C:\private\source\counterStrike\WpfApplication1\WpfApplication1\bin\Release\SmallBasicLibrary.xml
+C:\private\source\counterStrike\WpfApplication1\WpfApplication1\bin\Release\resource\beep.mp3
+C:\private\source\counterStrike\WpfApplication1\WpfApplication1\obj\Release\WpfApplication1_Content.g.cs

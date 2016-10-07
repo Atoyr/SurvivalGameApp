@@ -22,6 +22,8 @@ namespace WpfApplication1
             inputPasswords = new int[12];
             initPasswords();
             initInputPasswords();
+
+            initTimes();
         }
 
         /// <summary>

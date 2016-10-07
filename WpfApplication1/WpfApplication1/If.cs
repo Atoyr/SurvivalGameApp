@@ -92,7 +92,7 @@ namespace WpfApplication1
 
         }
 
-        // パスワードIF
+        #region パスワードIF
         private BitmapImage imgPassword0;
         public BitmapImage ImgPassword0
         {
@@ -165,9 +165,9 @@ namespace WpfApplication1
             get { return this.imgPassword11; }
             set { this.SetProperty(ref this.imgPassword11, value); }
         }
+        #endregion
 
-
-        // 時間関連IF
+        #region 時間関連IF
         private BitmapImage imgTimeTenPosHour;
         public BitmapImage ImgTimeTenPosHour
         {
@@ -201,6 +201,7 @@ namespace WpfApplication1
             get { return this.imgTimeOnePosMin; }
             set { this.SetProperty(ref this.imgTimeOnePosMin, value); }
         }
+        #endregion
 
         // ライト部分
         private Brush redLumpBrush = Brushes.DarkRed;
@@ -339,5 +340,69 @@ namespace WpfApplication1
             }
         }
 
+        public void SetTimerSeg(int pos,int digit)
+        {
+            BitmapImage tempBI;
+            switch (digit)
+            {
+                case 0:
+                    tempBI = this.segImg0;
+                    break;
+                case 1:
+                    tempBI = this.segImg1;
+                    break;
+                case 2:
+                    tempBI = this.segImg2;
+                    break;
+                case 3:
+                    tempBI = this.segImg3;
+                    break;
+                case 4:
+                    tempBI = this.segImg4;
+                    break;
+                case 5:
+                    tempBI = this.segImg5;
+                    break;
+                case 6:
+                    tempBI = this.segImg6;
+                    break;
+                case 7:
+                    tempBI = this.segImg7;
+                    break;
+                case 8:
+                    tempBI = this.segImg8;
+                    break;
+                case 9:
+                    tempBI = this.segImg9;
+                    break;
+                default:
+                    tempBI = this.blank;
+                    break;
+            }
+
+            this.SetTimerSeg(pos, tempBI);
+        }
+
+
+        public void SetTimerSeg(int pos, BitmapImage bi)
+        {
+            switch (pos)
+            {
+                case 0:
+                    ImgTimeTenPosHour = bi;
+                    break;
+                case 1:
+                    ImgTimeOnePosHour = bi;
+                    break;
+                case 2:
+                    ImgTimeTenPosMin = bi;
+                    break;
+                case 3:
+                    ImgTimeOnePosMin = bi;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

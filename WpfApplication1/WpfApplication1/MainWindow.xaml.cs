@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -9,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -47,6 +49,13 @@ namespace WpfApplication1
         // 音関連
         private const int SOUND_SPEED_NOMAL = 10;
         private const int SOUND_SPEED_FAST = 5;
+        private const int SOUND_SPEED_VERYFAST = 2;
+        public string BeepSoundPath = @"\beep.mp3";
+        public string BombSoundPath = @"\bomb.mp3";
+        public string KeyDownSoundPath = @"\key.mp3";
+        public string ErrorSoundPath = @"\Error.mp3";
+
+        private bool isButtonEnable = true;
 
         // 画面モード遷移 格納
         // 値格納時に表示切替を行う
@@ -87,6 +96,15 @@ namespace WpfApplication1
 
             // 音楽を流せるようにする
             Microsoft.SmallBasic.Library.Sound.PlayChimes();
+
+            // 音楽ファイルのパスを取得
+            Assembly myAssembly = Assembly.GetEntryAssembly();
+            string path = System.IO.Path.GetDirectoryName(myAssembly.Location);
+
+            BeepSoundPath = path + BeepSoundPath;
+            BombSoundPath = path + BombSoundPath;
+            KeyDownSoundPath = path + KeyDownSoundPath;
+            ErrorSoundPath = path + ErrorSoundPath;
         }
 
         // 表示更新関連
@@ -109,44 +127,56 @@ namespace WpfApplication1
             }
         }
 
+        private void updateTimerArea()
+        {
+            if (viewMode == VIEWMODE_SETTING)
+            {
+                for (int i = 0; i < wpfLogic.dispTimes.Length; i++)
+                {
+                    wpfIf.SetTimerSeg(i, wpfLogic.dispTimes[i]);
+                }
+            }
+        }
+
         #region テンキーボタン関連操作
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Microsoft.SmallBasic.Library.Sound.Stop(KeyDownSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Play(KeyDownSoundPath);
             Button b = (Button)sender;
             switch (b.Name)
             {
                 case "Button0":
-                    wpfLogic.AddPassword(0);
+                    this.PushDigitKey(0);
                     break;
                 case "Button1":
-                    wpfLogic.AddPassword(1);
+                    this.PushDigitKey(1);
                     break;
                 case "Button2":
-                    wpfLogic.AddPassword(2);
+                    this.PushDigitKey(2);
                     break;
                 case "Button3":
-                    wpfLogic.AddPassword(3);
+                    this.PushDigitKey(3);
                     break;
                 case "Button4":
-                    wpfLogic.AddPassword(4);
+                    this.PushDigitKey(4);
                     break;
                 case "Button5":
-                    wpfLogic.AddPassword(5);
+                    this.PushDigitKey(5);
                     break;
                 case "Button6":
-                    wpfLogic.AddPassword(6);
+                    this.PushDigitKey(6);
                     break;
                 case "Button7":
-                    wpfLogic.AddPassword(7);
+                    this.PushDigitKey(7);
                     break;
                 case "Button8":
-                    wpfLogic.AddPassword(8);
+                    this.PushDigitKey(8);
                     break;
                 case "Button9":
-                    wpfLogic.AddPassword(9);
+                    this.PushDigitKey(9);
                     break;
             }
-            this.updatePasswordArea();
         }
 
         private void ButtonC_Click(object sender, RoutedEventArgs e)
@@ -157,45 +187,13 @@ namespace WpfApplication1
 
         private void ButtonEnt_Click(object sender, RoutedEventArgs e)
         {
-            switch (ViewMode)
-            {
-                case VIEWMODE_NOMAL:
-                    if (mode == MODE_WAIT)
-                    {
-                        // 待機時
-                        this.ExecTimer();
-                        // 実行中にする
-                        mode = MODE_EXECUTE;
-                    } else if (mode == MODE_EXECUTE) {
-                        // 爆弾実行時
-                        if (wpfLogic.IsExistsPassword())
-                        {
-                            this.ExecBombClear();
-                            wpfIf.IsLightRed = false;
-                            mode = MODE_END;
-                        }
-                    } else if(mode == MODE_END){
-                        // ゲーム終了後
-                        mode = MODE_WAIT;
-                    }
-                    break;
-                case VIEWMODE_SETTING:
-                    if (cursor == CURSOR_PASSWORD)
-                    {
-                        wpfLogic.copyIntArray(wpfLogic.inputPasswords, wpfLogic.passwords);
-                        wpfLogic.initInputPasswords();
-                    }
-                    else if (cursor == CURSOR_TIMER)
-                    {
-
-                    }
-                    cursor = CURSOR_PASSWORD;
-                    break;
-                default:
-                    break;
-            }
+            Microsoft.SmallBasic.Library.Sound.Stop(KeyDownSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Play(KeyDownSoundPath);
+            this.ExecEnterKey();
         }
 
+
+        #region ボタン表示関連
         private void ButtonDisable()
         {
             Button0.IsEnabled = false;
@@ -210,6 +208,7 @@ namespace WpfApplication1
             Button9.IsEnabled = false;
             ButtonC.IsEnabled = false;
             ButtonEnt.IsEnabled = false;
+            isButtonEnable = false;
         }
 
         private void ButtonEnable()
@@ -226,7 +225,9 @@ namespace WpfApplication1
             Button9.IsEnabled = true;
             ButtonC.IsEnabled = true;
             ButtonEnt.IsEnabled = true;
+            isButtonEnable = true;
         }
+        #endregion
         #endregion
 
         private void ChangeViewMode()
@@ -236,53 +237,59 @@ namespace WpfApplication1
                 case VIEWMODE_NOMAL:
                     this.TimeArea.Visibility = Visibility.Hidden;
                     this.SettingArea.Visibility = Visibility.Hidden;
+                    this.ButtonEnable();
                     break;
                 case VIEWMODE_SETTING:
+                    wpfLogic.GetNowSettingTimer();
+                    this.updateTimerArea();
                     this.TimeArea.Visibility = Visibility.Visible;
                     this.SettingArea.Visibility = Visibility.Visible;
+                    this.ButtonEnable();
                     break;
             }
 
         }
 
 
-
+        // キーボード操作
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (cursor == CURSOR_PASSWORD)
+            if (isButtonEnable)
             {
+                Microsoft.SmallBasic.Library.Sound.Stop(KeyDownSoundPath);
+                Microsoft.SmallBasic.Library.Sound.Play(KeyDownSoundPath);
                 switch (e.Key)
                 {
                     //矢印キーが押されたことを表示する
                     case Key.D0:
-                        wpfLogic.AddPassword(0);
+                        this.PushDigitKey(0);
                         break;
                     case Key.D1:
-                        wpfLogic.AddPassword(1);
+                        this.PushDigitKey(1);
                         break;
                     case Key.D2:
-                        wpfLogic.AddPassword(2);
+                        this.PushDigitKey(2);
                         break;
                     case Key.D3:
-                        wpfLogic.AddPassword(3);
+                        this.PushDigitKey(3);
                         break;
                     case Key.D4:
-                        wpfLogic.AddPassword(4);
+                        this.PushDigitKey(4);
                         break;
                     case Key.D5:
-                        wpfLogic.AddPassword(5);
+                        this.PushDigitKey(5);
                         break;
                     case Key.D6:
-                        wpfLogic.AddPassword(6);
+                        this.PushDigitKey(6);
                         break;
                     case Key.D7:
-                        wpfLogic.AddPassword(7);
+                        this.PushDigitKey(7);
                         break;
                     case Key.D8:
-                        wpfLogic.AddPassword(8);
+                        this.PushDigitKey(8);
                         break;
                     case Key.D9:
-                        wpfLogic.AddPassword(9);
+                        this.PushDigitKey(9);
                         break;
                     case Key.Back:
                         wpfLogic.removePassword();
@@ -290,51 +297,8 @@ namespace WpfApplication1
                     case Key.Delete:
                         wpfLogic.removeAllPassword();
                         break;
-                    default:
-                        break;
-                }
-                this.updatePasswordArea();
-            }
-            else if (cursor == CURSOR_TIMER)
-            {
-                switch (e.Key)
-                {
-                    //矢印キーが押されたことを表示する
-                    case Key.D0:
-                        wpfLogic.AddPassword(0);
-                        break;
-                    case Key.D1:
-                        wpfLogic.AddPassword(1);
-                        break;
-                    case Key.D2:
-                        wpfLogic.AddPassword(2);
-                        break;
-                    case Key.D3:
-                        wpfLogic.AddPassword(3);
-                        break;
-                    case Key.D4:
-                        wpfLogic.AddPassword(4);
-                        break;
-                    case Key.D5:
-                        wpfLogic.AddPassword(5);
-                        break;
-                    case Key.D6:
-                        wpfLogic.AddPassword(6);
-                        break;
-                    case Key.D7:
-                        wpfLogic.AddPassword(7);
-                        break;
-                    case Key.D8:
-                        wpfLogic.AddPassword(8);
-                        break;
-                    case Key.D9:
-                        wpfLogic.AddPassword(9);
-                        break;
-                    case Key.Back:
-                        wpfLogic.removePassword();
-                        break;
-                    case Key.Delete:
-                        wpfLogic.removeAllPassword();
+                    case Key.Enter:
+                        this.ExecEnterKey();
                         break;
                     default:
                         break;
@@ -342,8 +306,100 @@ namespace WpfApplication1
             }
         }
 
+        // Enterキー押下時操作
+        private void ExecEnterKey()
+        {
+            switch (ViewMode)
+            {
+                case VIEWMODE_NOMAL:
+                    if (mode == MODE_WAIT)
+                    {
+                        // 待機時
+                        this.ExecTimer();
+                        // 実行中にする
+                        mode = MODE_EXECUTE;
+                    }
+                    else if (mode == MODE_EXECUTE)
+                    {
+                        // 爆弾実行時
+                        if (wpfLogic.IsExistsPassword())
+                        {
+                            // パスクリア処理
+                            this.ExecBombClear();
+                            wpfIf.IsLightRed = false;
+                            mode = MODE_END;
+                        }else
+                        {
+                            // パスワード不一致
+                            this.ExecBombError();
+                        }
+                    }
+                    else if (mode == MODE_END)
+                    {
+                        // ゲーム終了後
+                        wpfIf.IsLightRed = false;
+                        wpfIf.IsLightBlue = false;
+                        wpfLogic.GetNowSettingTimer();
+                        mode = MODE_WAIT;
+                    }
+                    break;
+                case VIEWMODE_SETTING:
+                    if (cursor == CURSOR_PASSWORD)
+                    {
+                        //パスワードエリア選択時
+                        wpfLogic.copyIntArray(wpfLogic.inputPasswords, wpfLogic.passwords);
+                        wpfLogic.initInputPasswords();
+                        this.updatePasswordArea();
+                    }
+                    else if (cursor == CURSOR_TIMER)
+                    {
+                        //時計エリア選択時
+                        wpfLogic.UpdateTimer();
+                        this.updateTimerArea();
+                    }
+
+                    // 設定後はパスワードにカーソルをあわせる
+                    cursor = CURSOR_PASSWORD;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // 数字入力時
+        private void PushDigitKey(int digit)
+        {
+            switch (ViewMode)
+            {
+                case VIEWMODE_NOMAL:
+                    wpfLogic.AddPassword(digit);
+                    this.updatePasswordArea();
+                    break;
+                case VIEWMODE_SETTING:
+                    // 実行中のときは触らせない！
+                    if (mode != MODE_EXECUTE)
+                    {
+                        if (cursor == CURSOR_PASSWORD)
+                        {
+                            wpfLogic.AddPassword(digit);
+                            this.updatePasswordArea();
+                        }
+                        else if (cursor == CURSOR_TIMER)
+                        {
+                            wpfLogic.AddTimer(digit);
+                            this.updateTimerArea();
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            
+        }
 
 
+        // 設定画面関連
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -361,23 +417,45 @@ namespace WpfApplication1
             }
         }
 
+        // エラー処理
+        private void ExecBombError()
+        {
+            Microsoft.SmallBasic.Library.Sound.Stop(BeepSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Stop(BombSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Stop(KeyDownSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Stop(ErrorSoundPath);
+
+            Microsoft.SmallBasic.Library.Sound.Play(ErrorSoundPath);
+        }
+
+
         // クリア処理
         private void ExecBombClear()
         {
             TimerStop();
             TimerReset();
+            Microsoft.SmallBasic.Library.Sound.Stop(BeepSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Stop(BombSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Stop(KeyDownSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Stop(ErrorSoundPath);
+
+            wpfIf.IsLightBlue = true;
         }
 
         // 爆破処理
         private void ExecBomb()
         {
             this.ButtonDisable();
+            Microsoft.SmallBasic.Library.Sound.Stop(BombSoundPath);
+            Microsoft.SmallBasic.Library.Sound.Play(BombSoundPath);
+
+            this.mode = MODE_END;
         }
 
 
-        // タイマー関連
+        #region タイマー関連
         DispatcherTimer dispatcherTimer;    // タイマーオブジェクト
-        int TimeLimit = 15;                 // 制限時間
+        int TimeLimit = 60;                 // 制限時間(デフォルト値)
         DateTime StartTime;                 // カウント開始時刻
         TimeSpan nowtimespan;               // Startボタンが押されてから現在までの経過時間
         TimeSpan oldtimespan;               // 一時停止ボタンが押されるまでに経過した時間の蓄積
@@ -389,6 +467,10 @@ namespace WpfApplication1
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 100); // 100ミリ秒ごとにTickを実行
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
 
+            // タイマーの時間設定
+            // 設定なしの場合は60秒
+            TimeLimit = wpfLogic.GetSettingTimerSec() == 0 ? 60 : wpfLogic.GetSettingTimerSec();
+
             // タイマー開始
             TimerStart();
         }
@@ -399,24 +481,33 @@ namespace WpfApplication1
             nowtimespan = DateTime.Now.Subtract(StartTime);
             wpfIf.IsLightRed = !wpfIf.IsLightRed;
 
-            if(timeCounter % soundBeepBase == 0)
+            // 時間表示
+            wpfLogic.SetDispTimerSec(TimeLimit - (int)nowtimespan.TotalSeconds);
+            this.updateTimerArea();
+
+            if (timeCounter % soundBeepBase == 0)
             {
+                // 止める処理を入れてから鳴らす
+                Microsoft.SmallBasic.Library.Sound.Stop(BeepSoundPath);
                 // ビープ音を鳴らす
-                Microsoft.SmallBasic.Library.Sound.PlayClick();
+                Microsoft.SmallBasic.Library.Sound.Play(BeepSoundPath);
             }
-            if (TimeSpan.Compare(oldtimespan.Add(nowtimespan), new TimeSpan(0, 0, TimeLimit - 10)) >= 0) // 10秒前からビープ音が早くなる
-            {
-                soundBeepBase = SOUND_SPEED_FAST;
-            }
-            if (TimeSpan.Compare(oldtimespan.Add(nowtimespan), new TimeSpan(0, 0, TimeLimit)) >= 0)
-            {
+            if (TimeSpan.Compare(oldtimespan.Add(nowtimespan), new TimeSpan(0, 0, TimeLimit)) >= 0){
                 wpfIf.IsLightRed = true;
                 TimerStop();
                 TimerReset();
                 // 爆発処理=====================================================================
-                Microsoft.SmallBasic.Library.Sound.PlayBellRing();
+                this.ExecBomb();
             }
-            timeCounter++;
+            else if (TimeSpan.Compare(oldtimespan.Add(nowtimespan), new TimeSpan(0, 0, TimeLimit - 10)) >= 0) // 10秒前からビープ音が早くなる
+            {
+                soundBeepBase = SOUND_SPEED_VERYFAST;
+            }
+            else if (TimeSpan.Compare(oldtimespan.Add(nowtimespan), new TimeSpan(0, 0, TimeLimit - 20)) >= 0) // 20秒前からすこしビープ音が早くなる
+            {
+                soundBeepBase = SOUND_SPEED_FAST;
+            }
+                timeCounter++;
         }
 
         // タイマー操作：開始
@@ -439,6 +530,8 @@ namespace WpfApplication1
         {
             oldtimespan = new TimeSpan();
         }
+
+        #endregion
 
         #region 設定画面開く用
         private void StackPanel_RightTop_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -481,7 +574,10 @@ namespace WpfApplication1
         {
             if (openSettingButtonPushCount == 3)
             {
-                ViewMode = VIEWMODE_SETTING;
+                if (ViewMode != VIEWMODE_SETTING)
+                {
+                    ViewMode = VIEWMODE_SETTING;
+                }
             }
             openSettingButtonPushCount = 0;
         }
@@ -490,7 +586,16 @@ namespace WpfApplication1
         // 設定保存
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
+            if (mode == MODE_END)
+            {
+                // ゲーム終了後
+                wpfIf.IsLightRed = false;
+                wpfIf.IsLightBlue = false;
+                mode = MODE_WAIT;
+            }
+
             wpfLogic.initInputPasswords();
+            this.updatePasswordArea();
             ViewMode = VIEWMODE_NOMAL;
         }
     }
