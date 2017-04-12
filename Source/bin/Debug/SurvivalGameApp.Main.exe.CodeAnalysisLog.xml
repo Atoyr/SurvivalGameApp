@@ -2,17 +2,17 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\enterprise\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
  <Targets>
-  <Target Name="C:\private\source\SurvivalGameApp\Source\bin\Debug\SurvivalGameApp.Main.exe">
+  <Target Name="C:\dev\source\SurvivalGameApp\Source\bin\Debug\SurvivalGameApp.Main.exe">
    <Modules>
     <Module Name="survivalgameapp.main.exe">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2017-04-12 10:36:21Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">'SurvivalGameApp.Main.exe' を厳密な名前キーで署名します。</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2017-04-12 10:36:21Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">外部から参照可能な型を公開するため、'SurvivalGameApp.Main.exe' を CLSCompliant(true) に設定します。</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2017-04-12 10:36:21Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Warning">アセンブリ 'SurvivalGameApp.Main.exe' には ResX ベースのリソース ファイルが含まれているため、NeutralResourcesLanguage 属性を設定し、アセンブリ内のリソースの言語を指定してください。これにより、最初にリソースが取得されるときのルックアップのパフォーマンスが向上する可能性があります。</Issue>
       </Message>
      </Messages>
@@ -25,8 +25,8 @@
            <Accessors>
             <Accessor Name="#set_BackOrCloseWindow(System.Windows.Input.ICommand)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
              <Messages>
-              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-04-12 10:36:21Z" FixCategory="NonBreaking">
-               <Issue Certainty="75" Level="Warning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Command" File="UserCommand.cs" Line="12">'UserCommand.BackOrCloseWindow.set(ICommand)' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Command" File="UserCommand.cs" Line="12">'UserCommand.BackOrCloseWindow.set(ICommand)' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
               </Message>
              </Messages>
             </Accessor>
@@ -42,8 +42,8 @@
          <Members>
           <Member Name="#LoadModule(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Module" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-04-12 10:36:21Z" FixCategory="Breaking">
-             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Common" File="NavigationHelper.cs" Line="29">'module' に変更して、メンバー 'NavigationHelper.LoadModule(string)' でパラメーター名 'ModuleName' の 'Module' の大文字と小文字の指定を訂正してください。</Issue>
+            <Message Id="Module" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Common" File="NavigationHelper.cs" Line="29">'module' に変更して、メンバー 'NavigationHelper.LoadModule(string)' でパラメーター名 'ModuleName' の 'Module' の大文字と小文字の指定を訂正してください。</Issue>
             </Message>
            </Messages>
           </Member>
@@ -53,8 +53,43 @@
          <Members>
           <Member Name="#Name(SurvivalGameApp.Main.Common.Regions)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2017-04-12 10:36:21Z" FixCategory="Breaking">
-             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Common" File="NavigationHelper.cs" Line="21">メソッド 'RegionsExtensions.Name(this Regions)' で、パラメーター名 'e' よりも意味のある名前を指定することを考慮してください。</Issue>
+            <Message Id="e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Common" File="NavigationHelper.cs" Line="21">メソッド 'RegionsExtensions.Name(this Regions)' で、パラメーター名 'e' よりも意味のある名前を指定することを考慮してください。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SurvivalGameApp.Main.Controls">
+       <Types>
+        <Type Name="TimeLabel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.cctor()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="CriticalWarning" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeLabel.cs" Line="28">すべてのフィールドを、それらが宣言されたときに 'TimeLabel' で初期化して、明示的な静的コンストラクターを削除します。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#coron" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">フィールド 'TimeLabel.coron' が使用されていない、または割り当てられているだけのようです。このフィールドを使用するか、または削除してください。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnApplyTemplate()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeLabel.cs" Line="66">'int.ToString(string)' の振る舞いは、現在のユーザーのロケール設定によって異なる場合があるため、'TimeLabel.OnApplyTemplate()' 内のこの呼び出しを 'int.ToString(string, IFormatProvider)' の呼び出しで置き換えます。'int.ToString(string, IFormatProvider)' の結果をユーザーに対して表示する場合は、'IFormatProvider' パラメーターに 'CultureInfo.CurrentCulture' を指定します。結果をディスクやデータベースに保持する場合など、ソフトウェアで結果を格納してアクセスする場合は、'CultureInfo.InvariantCulture' を指定します。</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeLabel.cs" Line="68">'int.ToString(string)' の振る舞いは、現在のユーザーのロケール設定によって異なる場合があるため、'TimeLabel.OnApplyTemplate()' 内のこの呼び出しを 'int.ToString(string, IFormatProvider)' の呼び出しで置き換えます。'int.ToString(string, IFormatProvider)' の結果をユーザーに対して表示する場合は、'IFormatProvider' パラメーターに 'CultureInfo.CurrentCulture' を指定します。結果をディスクやデータベースに保持する場合など、ソフトウェアで結果を格納してアクセスする場合は、'CultureInfo.InvariantCulture' を指定します。</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeLabel.cs" Line="70">'int.ToString(string)' の振る舞いは、現在のユーザーのロケール設定によって異なる場合があるため、'TimeLabel.OnApplyTemplate()' 内のこの呼び出しを 'int.ToString(string, IFormatProvider)' の呼び出しで置き換えます。'int.ToString(string, IFormatProvider)' の結果をユーザーに対して表示する場合は、'IFormatProvider' パラメーターに 'CultureInfo.CurrentCulture' を指定します。結果をディスクやデータベースに保持する場合など、ソフトウェアで結果を格納してアクセスする場合は、'CultureInfo.InvariantCulture' を指定します。</Issue>
+            </Message>
+            <Message Id="System.Windows.Controls.TextBlock.set_Text(System.String)" TypeName="ローカライズされるパラメーターとしてリテラルを渡さない" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeLabel.cs" Line="67">メソッド 'TimeLabel.OnApplyTemplate()' は、'TextBlock.Text.set(string)' への呼び出しのパラメーター 'value' としてリテラル文字列を渡します。これを変更して、リソース テーブルから次の文字列を取得してください: '":"'</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeLabel.cs" Line="69">メソッド 'TimeLabel.OnApplyTemplate()' は、'TextBlock.Text.set(string)' への呼び出しのパラメーター 'value' としてリテラル文字列を渡します。これを変更して、リソース テーブルから次の文字列を取得してください: '":"'</Issue>
             </Message>
            </Messages>
           </Member>
@@ -68,8 +103,8 @@
          <Members>
           <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-04-12 10:36:21Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalWarning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\ViewModels" File="MenuViewModel.cs" Line="18">'MenuViewModel.MenuViewModel()' には、クラスによって定義された仮想メソッドへの呼び出しの原因となる呼び出しチェーンが含まれます。予期しない結果となっていないことを次の呼び出し履歴から確認してください: &#xD;&#xA;&#xD;&#xA;MenuViewModel..ctor()&#xD;&#xA;MenuViewModel.set_Command(ICommand):Void&#xD;&#xA;BindableBase.SetProperty&lt;T&gt;(T&amp;, T, String):Boolean</Issue>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\ViewModels" File="MenuViewModel.cs" Line="18">'MenuViewModel.MenuViewModel()' には、クラスによって定義された仮想メソッドへの呼び出しの原因となる呼び出しチェーンが含まれます。予期しない結果となっていないことを次の呼び出し履歴から確認してください: &#xD;&#xA;&#xD;&#xA;MenuViewModel..ctor()&#xD;&#xA;MenuViewModel.set_Command(ICommand):Void&#xD;&#xA;BindableBase.SetProperty&lt;T&gt;(T&amp;, T, String):Boolean</Issue>
             </Message>
            </Messages>
           </Member>
@@ -83,8 +118,8 @@
          <Members>
           <Member Name="#BindingSetting()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-04-12 10:36:21Z" FixCategory="NonBreaking">
-             <Issue Certainty="75" Level="Warning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Views" File="Shell.xaml.cs" Line="28">'Shell.BindingSetting()' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-04-12 15:08:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Views" File="Shell.xaml.cs" Line="28">'Shell.BindingSetting()' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
             </Message>
            </Messages>
           </Member>
@@ -114,6 +149,16 @@
    <Resolution Name="Default">{0} は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Resolution>
    <Owner />
    <Url>http://msdn.microsoft.com/library/ms182264.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>使用されていないプライベート フィールドを使用しません</Name>
+   <Description>プライベート フィールドがアセンブリ内でアクセスされていないことを検出しました。この違反がエラーを発生させる場合、Visual Studio コード分析チームに問題報告を送信してください。</Description>
+   <Resolution Name="Default">フィールド {0} が使用されていない、または割り当てられているだけのようです。このフィールドを使用するか、または削除してください。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="75">Warning</MessageLevel>
    <File Name="performancerules.dll" Version="15.0.0.0" />
@@ -148,6 +193,16 @@
    <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
    <File Name="namingrules.dll" Version="15.0.0.0" />
   </Rule>
+  <Rule TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810">
+   <Name>参照型の静的フィールドをインラインで初期化します</Name>
+   <Description>静的フィールドは定義時に初期化されるべきです。明示的な静的コンストラクターで静的なデータを初期化すると、コードのパフォーマンスを低下させます。</Description>
+   <Resolution Name="Default">すべてのフィールドを、それらが宣言されたときに {0} で初期化して、明示的な静的コンストラクターを削除します。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182275.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">CriticalWarning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
   <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
    <Name>アセンブリに CLSCompliantAttribute を設定します</Name>
    <Description>アセンブリは、CLSCompliant 属性を使用して、その CLS 準拠を明示しなければなりません。この属性を伴わないアセンブリは、CLS に準拠しません。アセンブリ、モジュール、および型は、部分的に CLS 準拠していないくても、CLS 準拠に設定することができます。次の規則が適用されます: 1) 要素が CLSCompliant に設定されている場合、準拠していないすべてのメンバーの CLSCompliant 属性は false に設定されていなければなりません。2) CLS 準拠していない各メンバーには、同等の CLS 準拠している代替メンバーが指定されなければなりません。</Description>
@@ -167,6 +222,26 @@
    <Email>[none]</Email>
    <MessageLevel Certainty="95">Warning</MessageLevel>
    <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>IFormatProvider を指定します</Name>
+   <Description>IFormatProvider 引数を取得するオーバーロードが存在する場合、それを取得しないオーバーロードのために必ず呼び出される必要があります。ランタイムのメソッドは、文字列形式から、または文字列形式へ値を変換したり、値が変換される方法を示す書式指定子と呼ばれる、1 つ以上の文字を含む文字列パラメーターを取得することがあります。書式指定子の意味がカルチャによって異なる場合、書式設定オブジェクトは、文字列形式で使用された実際の文字を提供します。変換および比較の振る舞いがカルチャ間で変わらないシナリオでは、CultureInfo.InvariantCulture を指定してください。それ以外の場合は、CultureInfo.CurrentCulture を指定してください。</Description>
+   <Resolution Name="IFormatProviderAlternateString">{0} の振る舞いは、現在のユーザーのロケール設定によって異なる場合があるため、{1} 内のこの呼び出しを {2} の呼び出しで置き換えます。{2} の結果をユーザーに対して表示する場合は、'IFormatProvider' パラメーターに {3} を指定します。結果をディスクやデータベースに保持する場合など、ソフトウェアで結果を格納してアクセスする場合は、{4} を指定します。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="ローカライズされるパラメーターとしてリテラルを渡さない" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>ローカライズされるパラメーターとしてリテラルを渡さない</Name>
+   <Description>ソース コードに埋め込まれたリテラル文字列は、ローカライズするのが困難です。ローカライズされた文字列の使用が予想される環境においては、引数としてリテラル文字列を渡すことは避けてください。</Description>
+   <Resolution Name="KnownValue">メソッド {0} は、{2} への呼び出しのパラメーター '{1}' としてリテラル文字列を渡します。これを変更して、リソース テーブルから次の文字列を取得してください: '{3}'</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
   </Rule>
  </Rules>
  <Localized>

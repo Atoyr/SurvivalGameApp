@@ -162,8 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.TimeLabel.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <DependentUpon>Generic.xaml</DependentUpon>
     </Page>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>

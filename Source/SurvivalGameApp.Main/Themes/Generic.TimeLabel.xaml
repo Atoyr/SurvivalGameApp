@@ -9,13 +9,21 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock x:Name="PART_Hour" Text="{Binding Hour}" />
-                            <TextBlock x:Name="PART_HourCoron" Text="{Binding HourCoron}" />
-                            <TextBlock x:Name="PART_Minutes" Text="{Binding Minutes}" />
-                            <TextBlock x:Name="PART_MinutesCoron" Text="{Binding MinutesCoron}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" x:Name="PART_Hour" />
+                            <TextBlock Grid.Column="1" x:Name="PART_HourCoron" />
+                            <TextBlock Grid.Column="2" x:Name="PART_Minute" />
+                            <TextBlock Grid.Column="3" x:Name="PART_MinuteCoron" />
+                            <TextBlock Grid.Column="4" x:Name="PART_Second" />
                             <TextBlock />
-                        </StackPanel>
+                        </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
