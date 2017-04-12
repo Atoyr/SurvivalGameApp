@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.ServiceLocation;
+using Prism.Modularity;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,25 @@ namespace SurvivalGameApp.Main.Common
 
     public static class NavigationHelper
     {
-        public static void GoBack(Regions region)
+        public static void LoadModule(string ModuleName)
+        {
+            var moduleManager = ServiceLocator.Current.GetInstance<IModuleManager>();
+            moduleManager.LoadModule(ModuleName);
+        }
+
+        public static void GoNavigate(string source)
+        {
+            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+            regionManager.RequestNavigate(Regions.MainRegion.Name() , source);
+        }
+
+        public static void GoNavigate(string moduleName, string source)
+        {
+            LoadModule(moduleName);
+            GoNavigate(source);
+        }
+
+        public static bool GoBack(Regions region)
         {
             var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 
@@ -33,10 +52,12 @@ namespace SurvivalGameApp.Main.Common
             if (journal.CanGoBack)
             {
                 journal.GoBack();
+                return true;
             }
+            return false;
         }
 
-        public static void GoForward(Regions region)
+        public static bool GoForward(Regions region)
         {
             var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 
@@ -45,7 +66,9 @@ namespace SurvivalGameApp.Main.Common
             if (journal.CanGoForward)
             {
                 journal.GoForward();
+                return true;
             }
+            return false;
         }
     }
 }

@@ -17,5 +17,8 @@ namespace SurvivalGameApp.Main.Interface
         [Dependency]
         IEventAggregator EventAggregator { get; set; }
 
+        [Dependency]
+        IRegionManager RegionManager { get; set; }
+
     }
 }

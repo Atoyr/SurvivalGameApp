@@ -11,11 +11,12 @@ using SurvivalGameApp.Main.Interface;
 
 namespace SurvivalGameApp.Main.Abstract
 {
-    public abstract class ViewModelBase : BindableBase, IViewModel
+    public abstract class AbstractViewModel : BindableBase, IViewModel
     {
         public IUnityContainer Container { get; set; }
         public IEventAggregator EventAggregator { get; set; }
- 
+        public IRegionManager RegionManager { get; set; }
+
         public virtual bool IsNavigationTarget(NavigationContext navigationContext) { return true; }
 
         public virtual void OnNavigatedFrom(NavigationContext navigationContext) { }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\
+C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\
 SurvivalGameApp.Main
 none
 false
 CODE_ANALYSIS;DEBUG;TRACE
-C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\App.xaml
-2-552896158
+C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\App.xaml
+4-133652470
 
-17-1834034605
-81-457496771
-Views\MenuView.xaml;Views\Shell.xaml;
+201377811346
+81-931935890
+Themes\Generic.TimeLabel.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
 
 False
 
