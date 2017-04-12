@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{A2DB777E-FA7B-4CE5-9AD0-D356837A08A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurvivalGameApp.Main", "Source\SurvivalGameApp.Main\SurvivalGameApp.Main.csproj", "{661469C1-C97D-4441-BADA-38EEDFFAE3C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "Source\WpfApplication1\WpfApplication1.csproj", "{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{661469C1-C97D-4441-BADA-38EEDFFAE3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661469C1-C97D-4441-BADA-38EEDFFAE3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661469C1-C97D-4441-BADA-38EEDFFAE3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661469C1-C97D-4441-BADA-38EEDFFAE3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{661469C1-C97D-4441-BADA-38EEDFFAE3C0} = {A2DB777E-FA7B-4CE5-9AD0-D356837A08A3}
+		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C} = {A2DB777E-FA7B-4CE5-9AD0-D356837A08A3}
+	EndGlobalSection
+EndGlobal
