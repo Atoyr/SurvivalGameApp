@@ -71,3 +71,4 @@ C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\GeneratedInt
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.TimeLabel.baml
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.baml
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Views\MenuView.baml
+C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.TimeTextBlock.baml

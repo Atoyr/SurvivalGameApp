@@ -10,11 +10,11 @@ none
 false
 CODE_ANALYSIS;DEBUG;TRACE
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\App.xaml
-4-133652470
+5-310198998
 
-20-595643536
+21541355041
 81-457496771
-Themes\Generic.TimeLabel.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
+Themes\Generic.TimeLabel.xaml;Themes\Generic.TimeTextBlock.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
 
-True
+False
 

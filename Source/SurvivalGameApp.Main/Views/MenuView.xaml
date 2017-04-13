@@ -10,8 +10,16 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel>
-        <controls:TimeLabel NeedsToRun="True"  />
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <controls:TimeTextBlock NeedsToRun="True" Grid.Row="1" Grid.Column="1" />
         <Button Command="{Binding Command}" />
-    </StackPanel>
+    </Grid>
 </UserControl>

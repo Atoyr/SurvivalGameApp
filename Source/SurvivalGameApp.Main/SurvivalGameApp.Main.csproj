@@ -116,6 +116,7 @@
     <Compile Include="Command\UserCommand.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Controls\TimeLabel.cs" />
+    <Compile Include="Controls\TimeTextBlock.cs" />
     <Compile Include="Interface\IViewModel.cs" />
     <Compile Include="Util\JsonUtil.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
@@ -162,6 +163,11 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.TimeLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <DependentUpon>Generic.xaml</DependentUpon>
+    </Page>
+    <Page Include="Themes\Generic.TimeTextBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <DependentUpon>Generic.xaml</DependentUpon>
