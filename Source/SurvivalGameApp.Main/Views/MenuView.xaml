@@ -19,7 +19,7 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <controls:TimeTextBlock NeedsToRun="True" Grid.Row="1" Grid.Column="1" />
-        <Button Command="{Binding Command}" />
+        <controls:TimeLabel NeedsToRun="True" Grid.Row="1" Grid.Column="1" FontColor="DarkRed" FontSize="72" />
+        <Button Grid.Row="0" Grid.Column="1" Command="{Binding Command}" />
     </Grid>
 </UserControl>

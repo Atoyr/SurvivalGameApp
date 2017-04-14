@@ -10,7 +10,7 @@
         WindowState="Maximized"
         Topmost="True"
         AllowsTransparency="True"
-        Background="#33333333"
+        Background="#99999999"
         mc:Ignorable="d">
     <Grid>
         <ContentControl prism:RegionManager.RegionName="MainRegion" />
