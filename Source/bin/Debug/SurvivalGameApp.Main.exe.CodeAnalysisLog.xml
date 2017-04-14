@@ -6,13 +6,13 @@
    <Modules>
     <Module Name="survivalgameapp.main.exe">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">'SurvivalGameApp.Main.exe' を厳密な名前キーで署名します。</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">外部から参照可能な型を公開するため、'SurvivalGameApp.Main.exe' を CLSCompliant(true) に設定します。</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Warning">アセンブリ 'SurvivalGameApp.Main.exe' には ResX ベースのリソース ファイルが含まれているため、NeutralResourcesLanguage 属性を設定し、アセンブリ内のリソースの言語を指定してください。これにより、最初にリソースが取得されるときのルックアップのパフォーマンスが向上する可能性があります。</Issue>
       </Message>
      </Messages>
@@ -25,7 +25,7 @@
            <Accessors>
             <Accessor Name="#set_BackOrCloseWindow(System.Windows.Input.ICommand)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
              <Messages>
-              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
                <Issue Certainty="75" Level="Warning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Command" File="UserCommand.cs" Line="12">'UserCommand.BackOrCloseWindow.set(ICommand)' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
               </Message>
              </Messages>
@@ -42,8 +42,8 @@
          <Members>
           <Member Name="#LoadModule(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Module" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="Breaking">
-             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Common" File="NavigationHelper.cs" Line="29">'module' に変更して、メンバー 'NavigationHelper.LoadModule(string)' でパラメーター名 'ModuleName' の 'Module' の大文字と小文字の指定を訂正してください。</Issue>
+            <Message Id="Module" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Common" File="NavigationHelper.cs" Line="38">'module' に変更して、メンバー 'NavigationHelper.LoadModule(string)' でパラメーター名 'ModuleName' の 'Module' の大文字と小文字の指定を訂正してください。</Issue>
             </Message>
            </Messages>
           </Member>
@@ -53,8 +53,8 @@
          <Members>
           <Member Name="#Name(SurvivalGameApp.Main.Common.Regions)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="Breaking">
-             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Common" File="NavigationHelper.cs" Line="21">メソッド 'RegionsExtensions.Name(this Regions)' で、パラメーター名 'e' よりも意味のある名前を指定することを考慮してください。</Issue>
+            <Message Id="e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Common" File="NavigationHelper.cs" Line="27">メソッド 'RegionsExtensions.Name(this Regions)' で、パラメーター名 'e' よりも意味のある名前を指定することを考慮してください。</Issue>
             </Message>
            </Messages>
           </Member>
@@ -68,14 +68,14 @@
          <Members>
           <Member Name="#.cctor()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+            <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
              <Issue Certainty="90" Level="CriticalWarning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeLabel.cs" Line="28">すべてのフィールドを、それらが宣言されたときに 'TimeLabel' で初期化して、明示的な静的コンストラクターを削除します。</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#OnApplyTemplate()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeLabel.cs" Line="52">'DateTime.ToString(string)' の振る舞いは、現在のユーザーのロケール設定によって異なる場合があるため、'TimeLabel.OnApplyTemplate()' 内のこの呼び出しを 'DateTime.ToString(string, IFormatProvider)' の呼び出しで置き換えます。'DateTime.ToString(string, IFormatProvider)' の結果をユーザーに対して表示する場合は、'IFormatProvider' パラメーターに 'CultureInfo.CurrentCulture' を指定します。結果をディスクやデータベースに保持する場合など、ソフトウェアで結果を格納してアクセスする場合は、'CultureInfo.InvariantCulture' を指定します。</Issue>
             </Message>
            </Messages>
@@ -86,7 +86,7 @@
          <Members>
           <Member Name="#.cctor()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+            <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
              <Issue Certainty="90" Level="CriticalWarning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls" File="TimeTextBlock.cs" Line="22">すべてのフィールドを、それらが宣言されたときに 'TimeTextBlock' で初期化して、明示的な静的コンストラクターを削除します。</Issue>
             </Message>
            </Messages>
@@ -101,7 +101,7 @@
          <Members>
           <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\ViewModels" File="MenuViewModel.cs" Line="18">'MenuViewModel.MenuViewModel()' には、クラスによって定義された仮想メソッドへの呼び出しの原因となる呼び出しチェーンが含まれます。予期しない結果となっていないことを次の呼び出し履歴から確認してください: &#xD;&#xA;&#xD;&#xA;MenuViewModel..ctor()&#xD;&#xA;MenuViewModel.set_Command(ICommand):Void&#xD;&#xA;BindableBase.SetProperty&lt;T&gt;(T&amp;, T, String):Boolean</Issue>
             </Message>
            </Messages>
@@ -116,28 +116,28 @@
          <Members>
           <Member Name="#BindingSetting()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Views" File="Shell.xaml.cs" Line="34">'Shell.BindingSetting()' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetWindowLong(System.IntPtr,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="Breaking">
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalWarning">'Shell.GetWindowLong(IntPtr, int)' は P/Invoke メソッドであるため、NativeMethods、SafeNativeMethods または UnsafeNativeMethods に名前指定されたクラスで定義しなければなりません。</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#OnSourceInitialized(System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="SurvivalGameApp.Main.Views.Shell.SetWindowLong(System.IntPtr,System.Int32,System.Int32)" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="NonBreaking">
+            <Message Id="SurvivalGameApp.Main.Views.Shell.SetWindowLong(System.IntPtr,System.Int32,System.Int32)" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="NonBreaking">
              <Issue Name="HResultOrErrorCode" Certainty="95" Level="Warning" Path="C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Views" File="Shell.xaml.cs" Line="46">'Shell.OnSourceInitialized(EventArgs)' は 'Shell.SetWindowLong(IntPtr, int, int)' を呼び出しますが、メソッドから返される HRESULT またはエラー コードは使用されません。このため、エラー条件での予期しない振る舞いやリソース不足が発生する可能性があります。条件ステートメントで結果を使用するか、結果を変数に割り当てるか、引数として他のメソッドに渡してください。</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SetWindowLong(System.IntPtr,System.Int32,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2017-04-14 01:47:17Z" FixCategory="Breaking">
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2017-04-14 03:42:28Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalWarning">'Shell.SetWindowLong(IntPtr, int, int)' は P/Invoke メソッドであるため、NativeMethods、SafeNativeMethods または UnsafeNativeMethods に名前指定されたクラスで定義しなければなりません。</Issue>
             </Message>
            </Messages>
