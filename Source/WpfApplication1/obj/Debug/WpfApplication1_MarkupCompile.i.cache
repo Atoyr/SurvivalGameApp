@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\private\source\SurvivalGameApp\Source\WpfApplication1\obj\Debug\
+C:\dev\source\SurvivalGameApp\Source\WpfApplication1\obj\Debug\
 WpfApplication1
 none
 false
 DEBUG;TRACE
-C:\private\source\SurvivalGameApp\Source\WpfApplication1\App.xaml
+C:\dev\source\SurvivalGameApp\Source\WpfApplication1\App.xaml
 11151548125
 3815815117
-12-288098635
-171914476182
+12410916719
+17-1641759813
 MainWindow.xaml;
 
-True
+False
 

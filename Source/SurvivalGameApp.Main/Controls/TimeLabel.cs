@@ -25,8 +25,22 @@ namespace SurvivalGameApp.Main.Controls
 
         private DispatcherTimer DispatcherTimer { set; get; }
 
-        public static readonly DependencyProperty NeedsToRunProperty = DependencyProperty.Register("NeedsToRun", typeof(bool), typeof(TimeLabel), new PropertyMetadata(false));
+        public static readonly DependencyProperty NeedsToRunProperty = DependencyProperty.Register("NeedsToRun", typeof(bool), typeof(TimeLabel), new PropertyMetadata(false, ChangedNeedToRunProperty));
         public bool NeedsToRun { set => SetValue(NeedsToRunProperty, value); get => (bool)GetValue(NeedsToRunProperty); }
+        private static void ChangedNeedToRunProperty(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if(d is TimeLabel label && e.NewValue is bool needToRun)
+            {
+                if (needToRun)
+                {
+                    label.DispatcherTimer.Start();
+                }
+                else
+                {
+                    label.DispatcherTimer.Stop();
+                }
+            }
+        }
 
         public static readonly DependencyProperty FontColorProperty = DependencyProperty.Register("FontColor", typeof(Brush), typeof(TimeLabel), new PropertyMetadata(Brushes.Black));
         public Brush FontColor { set => SetValue(FontColorProperty, value); get => (Brush)GetValue(FontColorProperty); }
@@ -36,23 +50,25 @@ namespace SurvivalGameApp.Main.Controls
 
         private TextBlock PART_TextBlock;
 
+        public TimeLabel()
+        {
+            DispatcherTimer = CreateTimer();
+        }
+
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
             PART_TextBlock = (TextBlock)this.GetTemplateChild("PART_TextBlock");
             PART_TextBlock.Foreground = FontColor;
-            PART_TextBlock.FontSize = FontSize;
-            //if (PART_TextBlock == null) throw new Exception();
+            PART_TextBlock.FontSize = 72;
+            //PART_TextBlock.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./resources/Top Secret");
 
-            if (NeedsToRun)
-            {
-                DispatcherTimer = CreateTimer();
-                DispatcherTimer.Tick += (sender, args) 
-                    => {
-                        PART_TextBlock.Text = DateTime.Now.ToString("HH:mm:ss");
-                    };
-                DispatcherTimer.Start();
-            }
+
+
+            DispatcherTimer.Tick += (sender, args) 
+                => {
+                    PART_TextBlock.Text = DateTime.Now.ToString("HH:mm");
+                };
         }
 
         /// <summary>

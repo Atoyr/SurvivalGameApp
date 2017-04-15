@@ -25,7 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -115,8 +115,12 @@
     <Compile Include="Command\BackOrCloseWindowCommand.cs" />
     <Compile Include="Command\UserCommand.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Controls\GearIcon.cs" />
     <Compile Include="Controls\TimeLabel.cs" />
     <Compile Include="Controls\TimeTextBlock.cs" />
+    <Compile Include="Controls\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Interface\IViewModel.cs" />
     <Compile Include="Util\JsonUtil.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
@@ -152,6 +156,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resource\Font\Top Secret.ttf" />
     <None Include="SurvivalGameApp.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +167,14 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.GearIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Generic.TimeLabel.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>

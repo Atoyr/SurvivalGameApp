@@ -3,5 +3,6 @@
                     xmlns:local="clr-namespace:SurvivalGameApp.Main.Themes">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.TimeLabel.xaml" />
+        <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.GearIcon.xaml" />
     </ResourceDictionary.MergedDictionaries> 
 </ResourceDictionary>

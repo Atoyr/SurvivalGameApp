@@ -9,6 +9,7 @@
         WindowStyle="None"
         WindowState="Maximized"
         Topmost="True"
+        Loaded="Window_Loaded"
         AllowsTransparency="True"
         Background="#99999999"
         mc:Ignorable="d">
