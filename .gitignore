@@ -1,0 +1,5 @@
+﻿################################################################################
+# この .gitignore ファイルは Microsoft(R) Visual Studio によって自動的に作成されました。
+################################################################################
+
+/Source/SurvivalGameApp.Main/obj/Debug/SurvivalGameApp.Main_MarkupCompile.i.lref
