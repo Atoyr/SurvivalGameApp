@@ -7,13 +7,21 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:local="clr-namespace:SurvivalGameApp.Main.Views"
         WindowStyle="None"
-        WindowState="Maximized"
         Topmost="True"
         Loaded="Window_Loaded"
         AllowsTransparency="True"
         Background="#99999999"
         mc:Ignorable="d">
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="MainRegion" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ContentControl prism:RegionManager.RegionName="MainRegion" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="DebugTextBlock" Grid.Row="1" FontSize="12"/>
     </Grid>
 </Window>

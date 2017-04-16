@@ -11,19 +11,20 @@
              mc:Ignorable="d" 
              x:Name="mainWindow"
              d:DesignHeight="768" d:DesignWidth="1024">
-    <Grid Background="Transparent" Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="30"/>
-        </Grid.ColumnDefinitions>
-        <controls:GearIcon Grid.Row="0" Grid.Column="2" />
-        <Button Grid.Row="0" Grid.Column="0" Command="{Binding Command}" />
-        <controls:TimeLabel Grid.Column="1" Grid.Row="2" FontColor="Red" NeedsToRun="True" FontFamily="Top Secret" />
-    </Grid>
+    <DockPanel Background="Transparent">
+        <StackPanel Background="#55555555" DockPanel.Dock="Right" Width="30">
+            <controls:GearIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <controls:TimeLabel Grid.Column="1" Grid.Row="1" FontColor="Red" NeedsToRun="True" FontFamily="Top Secret" />
+        </Grid>
+    </DockPanel>
 </UserControl>

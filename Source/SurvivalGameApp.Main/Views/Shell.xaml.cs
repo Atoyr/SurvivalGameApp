@@ -28,6 +28,21 @@ namespace SurvivalGameApp.Main.Views
         public Shell()
         {
             InitializeComponent();
+
+            this.Height = SystemParameters.PrimaryScreenHeight;
+            this.Width = SystemParameters.PrimaryScreenWidth;
+            this.Top = 0d;
+            this.Left = 0d;
+
+            string debugText = string.Empty;
+
+            DebugTextBlock.Inlines.Add("Height ");
+            DebugTextBlock.Inlines.Add(this.Height.ToString());
+            DebugTextBlock.Inlines.Add(new LineBreak());
+            DebugTextBlock.Inlines.Add("Width ");
+            DebugTextBlock.Inlines.Add(this.Width.ToString());
+            DebugTextBlock.Inlines.Add(new LineBreak());
+
         }
 
         private void BindingSetting()

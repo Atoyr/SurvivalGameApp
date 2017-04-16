@@ -172,8 +172,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Generic.GearIcon.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <DependentUpon>Generic.xaml</DependentUpon>
     </Page>
     <Page Include="Themes\Generic.TimeLabel.xaml">
       <SubType>Designer</SubType>
