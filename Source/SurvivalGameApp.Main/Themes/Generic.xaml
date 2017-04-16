@@ -4,5 +4,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.TimeLabel.xaml" />
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.GearIcon.xaml" />
+        <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.PowerIcon.xaml" />
     </ResourceDictionary.MergedDictionaries> 
 </ResourceDictionary>

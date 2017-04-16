@@ -76,3 +76,4 @@ C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Gener
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Controls\UserControl2.g.cs
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Controls\UserControl2.baml
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\App.baml
+C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.PowerIcon.baml

@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SurvivalGameApp.Main.Controls">
+    <Style TargetType="{x:Type local:PowerIcon}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:PowerIcon}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Viewbox>
+                            <Grid Width="100" Height="100">
+                                <Path x:Name="Base" 
+                                      Data="M35.5,6.5199997 L35.5,22.063686 34.85691,22.290191 C23.561279,26.426067 15.5,37.271669 15.499999,50.000087 15.5,66.292453 28.707599,79.500026 45,79.500026 61.2924,79.500026 74.5,66.292453 74.5,50.000087 74.5,37.271669 66.43872,26.426067 55.143089,22.290191 L54.5,22.063686 54.5,6.5199997 55.049755,6.6396791 C74.786117,11.195619 89.5,28.879549 89.5,50.000087 89.5,74.576709 69.576675,94.499996 45,94.499996 20.423328,94.499996 0.49999994,74.576709 0.5,50.000087 0.49999994,28.879549 15.213884,11.195619 34.950245,6.6396791 z M38.5,0.5 L51.5,0.5 51.5,56.5 38.5,56.5 z" 
+                                      Fill="#FFF4F4F5" 
+                                      Margin="5" 
+                                      Stretch="Fill" 
+                                      Stroke="Black" />
+                            </Grid>
+                        </Viewbox>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

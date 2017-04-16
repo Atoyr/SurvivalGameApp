@@ -116,6 +116,7 @@
     <Compile Include="Command\UserCommand.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Controls\GearIcon.cs" />
+    <Compile Include="Controls\PowerIcon.cs" />
     <Compile Include="Controls\TimeLabel.cs" />
     <Compile Include="Controls\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
@@ -180,6 +181,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Generic.GearIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <DependentUpon>Generic.xaml</DependentUpon>
+    </Page>
+    <Page Include="Themes\Generic.PowerIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <DependentUpon>Generic.xaml</DependentUpon>

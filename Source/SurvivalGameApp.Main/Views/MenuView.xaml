@@ -13,7 +13,8 @@
              d:DesignHeight="768" d:DesignWidth="1024">
     <DockPanel Background="Transparent">
         <StackPanel Background="#55555555" DockPanel.Dock="Right" Width="30">
-            <controls:GearIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <controls:GearIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <controls:PowerIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </StackPanel>
         <Grid>
             <Grid.RowDefinitions>

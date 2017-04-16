@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,13 @@ namespace SurvivalGameApp.Main.Controls
 {
     public class GearIcon : Control
     {
+
         static GearIcon()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GearIcon), new FrameworkPropertyMetadata(typeof(GearIcon)));
         }
+
+        //public static DependencyProperty CommandProperty = DependencyProperty.Register("Command", typeof(ICommand), typeof(GearIcon), new PropertyMetadata(new DelegateCommand(new Action(() => { }))));
+        //public ICommand Command { set => SetValue(CommandProperty, value); get => (ICommand)GetValue(CommandProperty); }
     }
 }
