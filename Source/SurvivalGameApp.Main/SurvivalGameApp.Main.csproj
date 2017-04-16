@@ -117,9 +117,11 @@
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Controls\GearIcon.cs" />
     <Compile Include="Controls\TimeLabel.cs" />
-    <Compile Include="Controls\TimeTextBlock.cs" />
     <Compile Include="Controls\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControl2.xaml.cs">
+      <DependentUpon>UserControl2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Interface\IViewModel.cs" />
     <Compile Include="Util\JsonUtil.cs" />
@@ -156,8 +158,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="Resource\Font\Top Secret.ttf" />
     <None Include="SurvivalGameApp.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Top Secret.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -171,17 +175,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\UserControl2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.GearIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <DependentUpon>Generic.xaml</DependentUpon>
     </Page>
     <Page Include="Themes\Generic.TimeLabel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
-      <DependentUpon>Generic.xaml</DependentUpon>
-    </Page>
-    <Page Include="Themes\Generic.TimeTextBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <DependentUpon>Generic.xaml</DependentUpon>

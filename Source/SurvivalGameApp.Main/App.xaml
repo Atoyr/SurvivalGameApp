@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:SurvivalGameApp.Main"
              Startup="Application_Startup">
     <Application.Resources>
-         
+        <FontFamily x:Key="TopSecret">"pack://application:,,,/SurvivalGameApp.Main;component/Resources/Fonts/#Top Secret</FontFamily>
     </Application.Resources>
 </Application>

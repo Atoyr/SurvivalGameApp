@@ -69,8 +69,10 @@ C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\GeneratedInt
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.TimeLabel.baml
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.baml
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Views\MenuView.baml
-C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.TimeTextBlock.baml
 C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.TimeTextBlock.baml
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Controls\UserControl1.g.cs
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Controls\UserControl1.baml
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.GearIcon.baml
+C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Controls\UserControl2.g.cs
+C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Controls\UserControl2.baml
+C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\App.baml

@@ -42,11 +42,28 @@ namespace SurvivalGameApp.Main.Controls
             }
         }
 
-        public static readonly DependencyProperty FontColorProperty = DependencyProperty.Register("FontColor", typeof(Brush), typeof(TimeLabel), new PropertyMetadata(Brushes.Black));
+        public static readonly DependencyProperty FontColorProperty = DependencyProperty.Register("FontColor", typeof(Brush), typeof(TimeLabel), new PropertyMetadata(Brushes.Black, ChangedFontColorProperty));
         public Brush FontColor { set => SetValue(FontColorProperty, value); get => (Brush)GetValue(FontColorProperty); }
+        private static void ChangedFontColorProperty(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if(d is TimeLabel label && e.NewValue is Brush fontColor)
+            {
+                label.Foreground = fontColor;
+            }
+        }
 
-        public static readonly DependencyProperty TimeSpanProperty = DependencyProperty.Register("TimeSpan", typeof(TimeSpan), typeof(TimeLabel), new PropertyMetadata(TimeSpan.FromMilliseconds(500)));
-        public TimeSpan TimeSpan { set => SetValue(TimeSpanProperty, value); get => (TimeSpan)GetValue(TimeSpanProperty); }
+        public static readonly DependencyProperty IntervalProperty = DependencyProperty.Register("Interval", typeof(TimeSpan), typeof(TimeLabel), new PropertyMetadata(TimeSpan.FromMilliseconds(500)));
+        public TimeSpan Interval { set => SetValue(IntervalProperty, value); get => (TimeSpan)GetValue(IntervalProperty); }
+        private static void ChangedTimeSpanProperty(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is TimeLabel label && e.NewValue is TimeSpan interval)
+            {
+                label.DispatcherTimer.Interval = interval;
+            }
+        }
+
+        public static new readonly DependencyProperty FontSizeProperty = DependencyProperty.Register("FontSize", typeof(double), typeof(TimeLabel), new FrameworkPropertyMetadata(72d,FrameworkPropertyMetadataOptions.None));
+        public new double FontSize { private set => SetValue(FontSizeProperty, value); get => (double)GetValue(FontSizeProperty); }
 
         private TextBlock PART_TextBlock;
 
@@ -61,9 +78,12 @@ namespace SurvivalGameApp.Main.Controls
             PART_TextBlock = (TextBlock)this.GetTemplateChild("PART_TextBlock");
             PART_TextBlock.Foreground = FontColor;
             PART_TextBlock.FontSize = 72;
-            //PART_TextBlock.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./resources/Top Secret");
 
-
+            // フォントの読み込み
+            //foreach (FontFamily fontFamily in Fonts.GetFontFamilies(new Uri("pack://application:,,,/SurvivalGameApp.Main/"), "./Resources/"))
+            //{
+            //    // Perform action.
+            //}
 
             DispatcherTimer.Tick += (sender, args) 
                 => {
@@ -75,6 +95,6 @@ namespace SurvivalGameApp.Main.Controls
         /// タイマー生成処理
         /// </summary>
         /// <returns>生成したタイマー</returns>
-        private DispatcherTimer CreateTimer() => new DispatcherTimer(DispatcherPriority.SystemIdle) { Interval = TimeSpan };
+        private DispatcherTimer CreateTimer() => new DispatcherTimer(DispatcherPriority.SystemIdle) { Interval = this.Interval };
     }
 }

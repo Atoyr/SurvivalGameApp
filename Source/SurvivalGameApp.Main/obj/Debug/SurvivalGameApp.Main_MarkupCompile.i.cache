@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\App.xaml
-7-1075894581
+7-631722661
 
-23-1441194207
+23-983114426
 81-457496771
-Controls\UserControl1.xaml;Themes\Generic.GearIcon.xaml;Themes\Generic.TimeLabel.xaml;Themes\Generic.TimeTextBlock.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
+Controls\UserControl1.xaml;Controls\UserControl2.xaml;Themes\Generic.GearIcon.xaml;Themes\Generic.TimeLabel.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
 
-True
+False
 

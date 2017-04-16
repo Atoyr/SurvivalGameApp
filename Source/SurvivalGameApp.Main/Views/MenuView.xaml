@@ -24,7 +24,7 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <controls:TimeLabel Grid.Column="1" Grid.Row="1" FontColor="Red" NeedsToRun="True" FontFamily="Top Secret" />
+            <controls:TimeLabel Grid.Column="1" Grid.Row="1" FontColor="Red" NeedsToRun="True" FontFamily="{StaticResource TopSecret}" />
         </Grid>
     </DockPanel>
 </UserControl>
