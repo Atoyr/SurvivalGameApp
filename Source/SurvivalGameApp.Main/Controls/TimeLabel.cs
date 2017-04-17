@@ -62,9 +62,6 @@ namespace SurvivalGameApp.Main.Controls
             }
         }
 
-        public static new readonly DependencyProperty FontSizeProperty = DependencyProperty.Register("FontSize", typeof(double), typeof(TimeLabel), new FrameworkPropertyMetadata(72d,FrameworkPropertyMetadataOptions.None));
-        public new double FontSize { private set => SetValue(FontSizeProperty, value); get => (double)GetValue(FontSizeProperty); }
-
         private TextBlock PART_TextBlock;
 
         public TimeLabel()

@@ -24,7 +24,17 @@ namespace SurvivalGameApp.Main.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GearIcon), new FrameworkPropertyMetadata(typeof(GearIcon)));
         }
 
-        //public static DependencyProperty CommandProperty = DependencyProperty.Register("Command", typeof(ICommand), typeof(GearIcon), new PropertyMetadata(new DelegateCommand(new Action(() => { }))));
-        //public ICommand Command { set => SetValue(CommandProperty, value); get => (ICommand)GetValue(CommandProperty); }
+        public GearIcon()
+        {
+            this.MouseDown += GearIcon_MouseDown;           
+        }
+
+        private void GearIcon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Command != null) Command.Execute(e.OriginalSource);
+        }
+
+        public static DependencyProperty CommandProperty = DependencyProperty.Register("Command", typeof(ICommand), typeof(GearIcon), new PropertyMetadata(new DelegateCommand(new Action(() => { }))));
+        public ICommand Command { set => SetValue(CommandProperty, value); get => (ICommand)GetValue(CommandProperty); }
     }
 }

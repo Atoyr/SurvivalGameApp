@@ -1,11 +1,12 @@
 ﻿
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\App.xaml;;
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls\UserControl1.xaml;;
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls\UserControl2.xaml;;
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.GearIcon.xaml;;
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.TimeLabel.xaml;;
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.xaml;;
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Views\MenuView.xaml;;
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Views\Shell.xaml;;
-FC:\dev\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.PowerIcon.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\App.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls\UserControl1.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Controls\UserControl2.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.GearIcon.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.PowerIcon.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.TimeLabel.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Views\MenuView.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Views\Shell.xaml;;
+FC:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\Themes\Generic.CaptionBar.xaml;;
 

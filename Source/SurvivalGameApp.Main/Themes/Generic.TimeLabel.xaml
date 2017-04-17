@@ -10,7 +10,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
                         <StackPanel>
-                            <Viewbox Margin="2">
+                            <Viewbox>
                                 <TextBlock x:Name="PART_TextBlock"/>
                             </Viewbox>
                         </StackPanel>

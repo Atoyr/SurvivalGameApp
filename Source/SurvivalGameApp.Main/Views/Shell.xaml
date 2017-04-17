@@ -12,16 +12,23 @@
         AllowsTransparency="True"
         Background="#99999999"
         mc:Ignorable="d">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <ContentControl prism:RegionManager.RegionName="MainRegion" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="DebugTextBlock" Grid.Row="1" FontSize="12"/>
-    </Grid>
+    <Border Background="Transparent" BorderThickness="1" BorderBrush="Blue">
+        <Border.Effect>
+            <DropShadowEffect Color="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}"
+                          ShadowDepth="0"
+                          BlurRadius="8" />
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ContentControl prism:RegionManager.RegionName="MainRegion" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="DebugTextBlock" Grid.Row="1" FontSize="12"/>
+        </Grid>
+    </Border>
 </Window>

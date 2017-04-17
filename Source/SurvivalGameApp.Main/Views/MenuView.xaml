@@ -12,10 +12,22 @@
              x:Name="mainWindow"
              d:DesignHeight="768" d:DesignWidth="1024">
     <DockPanel Background="Transparent">
-        <StackPanel Background="#55555555" DockPanel.Dock="Right" Width="30">
-            <controls:GearIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <controls:PowerIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-        </StackPanel>
+        <Grid Background="#AA000000" DockPanel.Dock="Left" Width="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" >
+                <controls:GearIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="DarkGray" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <controls:PowerIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="DarkGray" />
+            </StackPanel>
+        </Grid>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
@@ -25,7 +37,12 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <controls:TimeLabel Grid.Column="1" Grid.Row="1" FontColor="Red" NeedsToRun="True" FontFamily="{StaticResource TopSecret}" />
+            <controls:TimeLabel 
+                Grid.Column="1" Grid.Row="1" 
+                FontColor="DarkGray" 
+                NeedsToRun="True" 
+                Margin="30" 
+                FontFamily="{StaticResource TopSecret}" />
         </Grid>
     </DockPanel>
 </UserControl>
