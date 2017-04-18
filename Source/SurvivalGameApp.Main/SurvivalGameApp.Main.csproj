@@ -131,7 +131,7 @@
     <Compile Include="Controls\UserControl2.xaml.cs">
       <DependentUpon>UserControl2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interface\IViewModel.cs" />
+    <Compile Include="Interfaces\IViewModel.cs" />
     <Compile Include="Util\FileUtil.cs" />
     <Compile Include="Util\JsonUtil.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />

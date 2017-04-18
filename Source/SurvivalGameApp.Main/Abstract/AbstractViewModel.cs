@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Prism.Events;
 using Prism.Regions;
-using SurvivalGameApp.Main.Interface;
+using SurvivalGameApp.Main.Interfaces;
 
 namespace SurvivalGameApp.Main.Abstract
 {

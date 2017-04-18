@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SurvivalGameApp.Main.Interface
+namespace SurvivalGameApp.Main.Interfaces
 {
     interface IViewModel : INavigationAware
     {
