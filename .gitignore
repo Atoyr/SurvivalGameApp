@@ -3,3 +3,10 @@
 ################################################################################
 
 /Source/SurvivalGameApp.Main/obj/Debug/SurvivalGameApp.Main_MarkupCompile.i.lref
+/Source/SurvivalGameApp.Main/obj
+/Source/SurvivalGameApp/bin
+/packages
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
