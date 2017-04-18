@@ -88,3 +88,4 @@ C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\G
 C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.CaptionButton.baml
 C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Themes\Generic.SystemButtons.baml
 C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\Styles\Style.Icons.baml
+C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\SurvivalGameApp.Main.csprojResolveAssemblyReference.cache

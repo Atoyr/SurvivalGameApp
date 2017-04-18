@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="Command\BackOrCloseWindowCommand.cs" />
     <Compile Include="Command\UserCommand.cs" />
+    <Compile Include="Common\ApplicationContext.cs" />
     <Compile Include="Common\CaptionButtonMode.cs" />
     <Compile Include="Common\InternalExtensions.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
@@ -131,8 +132,9 @@
     <Compile Include="Controls\UserControl2.xaml.cs">
       <DependentUpon>UserControl2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\ColorCodeToSolidBrushConverter.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
-    <Compile Include="Util\FileUtil.cs" />
+    <Compile Include="Util\IOUtil.cs" />
     <Compile Include="Util\JsonUtil.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="Views\MenuView.xaml.cs">
