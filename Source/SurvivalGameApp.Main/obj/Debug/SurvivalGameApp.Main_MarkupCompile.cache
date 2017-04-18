@@ -8,13 +8,13 @@ C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\obj\Debug\
 SurvivalGameApp.Main
 none
 false
-CODE_ANALYSIS;DEBUG;TRACE
+DEBUG;TRACE
 C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\App.xaml
-4-133652470
+162095997796
 
-16-1615663883
+281246035055
 81-931935890
-Themes\Generic.TimeLabel.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
+Controls\UserControl1.xaml;Controls\UserControl2.xaml;Styles\Font.xaml;Styles\Style.CaptionButton.xaml;Styles\Style.Icons.xaml;Styles\Style.xaml;Themes\Generic.CaptionBar.xaml;Themes\Generic.CaptionButton.xaml;Themes\Generic.GearIcon.xaml;Themes\Generic.Icon.xaml;Themes\Generic.PowerIcon.xaml;Themes\Generic.SystemButtons.xaml;Themes\Generic.TimeLabel.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
 
 False
 

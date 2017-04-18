@@ -15,7 +15,15 @@ namespace SurvivalGameApp.Main
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            new Bootstrapper().Run();
+            var bootstrapper = new Bootstrapper();
+            if (e.Args is string[] args && args.Count() > 0)
+            {
+                bootstrapper.Run(args[0]);
+            }
+            else
+            {
+                bootstrapper.Run();
+            }
         }
     }
 }

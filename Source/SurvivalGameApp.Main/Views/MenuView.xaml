@@ -4,12 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:command="clr-namespace:SurvivalGameApp.Main.Command"
+             xmlns:controls="clr-namespace:SurvivalGameApp.Main.Controls"
              xmlns:local="clr-namespace:SurvivalGameApp.Main.Views"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Button Command="{Binding CContainerommand}" />
-    </Grid>
+             x:Name="mainWindow"
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <DockPanel Background="Transparent">
+        <Grid Background="#AA000000" DockPanel.Dock="Left" Width="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" >
+                <controls:GearIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="DarkGray" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <controls:PowerIcon HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="DarkGray" />
+            </StackPanel>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <controls:TimeLabel 
+                Grid.Column="1" Grid.Row="1" 
+                FontColor="DarkGray" 
+                NeedsToRun="True" 
+                Margin="30" 
+                FontFamily="{StaticResource TopSecret}" />
+        </Grid>
+    </DockPanel>
 </UserControl>

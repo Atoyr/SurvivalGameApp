@@ -17,30 +17,83 @@ namespace SurvivalGameApp.Main.Common
 
     public static class RegionsExtensions
     {
+        /// <summary>
+        /// Region名に変換
+        /// これいる？
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         public static string Name(this Regions e)
         {
             return e.ToString();
         }
     }
 
+    /// <summary>
+    /// RegionのNavigationヘルパー
+    /// </summary>
     public static class NavigationHelper
     {
         public static void LoadModule(string ModuleName)
         {
             var moduleManager = ServiceLocator.Current.GetInstance<IModuleManager>();
-            moduleManager.LoadModule(ModuleName);
+            moduleManager?.LoadModule(ModuleName);
         }
 
-        public static void GoNavigate(string source)
+        public static void GoNavigate(Regions region, string source)
         {
             var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-            regionManager.RequestNavigate(Regions.MainRegion.Name() , source);
+            regionManager?.RequestNavigate(region.Name(), source);
         }
 
-        public static void GoNavigate(string moduleName, string source)
+        public static void GoNavigate(Regions region, string source, NavigationParameters param)
         {
-            LoadModule(moduleName);
-            GoNavigate(source);
+            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+            regionManager?.RequestNavigate(region.Name(), source, param);
+        }
+
+        public static void GoNavigate(Regions region, string source, Action<NavigationResult> navigationCallback)
+        {
+            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+            regionManager?.RequestNavigate(region.Name(), source, navigationCallback);
+        }
+
+        public static void GoNavigate(Regions region, string source, Action<NavigationResult> navigationCallback, NavigationParameters param)
+        {
+            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
+            regionManager?.RequestNavigate(region.Name(), source, navigationCallback, param);
+        }
+
+        public static void GoNavigate(string source) => GoNavigate(Regions.MainRegion, source);
+
+        public static void GoNavigate(string source, NavigationParameters param) => GoNavigate(Regions.MainRegion, source, param);
+
+        public static void GoNavigate(string source, Action<NavigationResult> navigationCallback) => GoNavigate(Regions.MainRegion, source, navigationCallback);
+
+        public static void GoNavigate(string source, Action<NavigationResult> navigationCallback, NavigationParameters param) => GoNavigate(Regions.MainRegion, source, navigationCallback, param);
+
+        public static void GoNavigate(Regions region, string module ,string source)
+        {
+            LoadModule(module);
+            GoNavigate(region, source);
+        }
+
+        public static void GoNavigate(Regions region, string module, string source, NavigationParameters param)
+        {
+            LoadModule(module);
+            GoNavigate(region, source, param);
+        }
+
+        public static void GoNavigate(Regions region, string module, string source, Action<NavigationResult> navigationCallback)
+        {
+            LoadModule(module);
+            GoNavigate(region, source, navigationCallback);
+        }
+
+        public static void GoNavigate(Regions region, string module, string source, Action<NavigationResult> navigationCallback, NavigationParameters param)
+        {
+            LoadModule(module);
+            GoNavigate(region, source, navigationCallback, param);
         }
 
         public static bool GoBack(Regions region)
@@ -48,7 +101,7 @@ namespace SurvivalGameApp.Main.Common
             var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 
             // enumで制限しているためRegionは必ず存在する前提
-            var journal = regionManager.Regions[region.Name()].NavigationService.Journal;
+            var journal = regionManager?.Regions[region.Name()].NavigationService.Journal;
             if (journal.CanGoBack)
             {
                 journal.GoBack();
@@ -62,7 +115,7 @@ namespace SurvivalGameApp.Main.Common
             var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 
             // enumで制限しているためRegionは必ず存在する前提
-            var journal = regionManager.Regions[region.Name()].NavigationService.Journal;
+            var journal = regionManager?.Regions[region.Name()].NavigationService.Journal;
             if (journal.CanGoForward)
             {
                 journal.GoForward();

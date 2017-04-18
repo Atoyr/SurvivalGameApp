@@ -44,8 +44,18 @@ namespace SurvivalGameApp.Main
         public new void Run()
         {
             base.Run();
+            ExecutedRun(nameof(MenuView));
+        }
+        public void Run(string source)
+        {
+            base.Run();
+            ExecutedRun(source);
+        }
+
+        private void ExecutedRun(string source)
+        {
             Container.RegisterInstance((Window)Shell);
-            NavigationHelper.GoNavigate(nameof(MenuView));
+            NavigationHelper.GoNavigate(source);
         }
     }
 }

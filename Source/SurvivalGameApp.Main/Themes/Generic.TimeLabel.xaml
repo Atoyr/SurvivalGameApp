@@ -9,12 +9,10 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock x:Name="PART_Hour" Text="{Binding Hour}" />
-                            <TextBlock x:Name="PART_HourCoron" Text="{Binding HourCoron}" />
-                            <TextBlock x:Name="PART_Minutes" Text="{Binding Minutes}" />
-                            <TextBlock x:Name="PART_MinutesCoron" Text="{Binding MinutesCoron}" />
-                            <TextBlock />
+                        <StackPanel>
+                            <Viewbox>
+                                <TextBlock x:Name="PART_TextBlock"/>
+                            </Viewbox>
                         </StackPanel>
                     </Border>
                 </ControlTemplate>
