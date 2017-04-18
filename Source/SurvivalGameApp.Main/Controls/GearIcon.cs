@@ -16,25 +16,12 @@ using System.Windows.Shapes;
 
 namespace SurvivalGameApp.Main.Controls
 {
-    public class GearIcon : Control
+    public class GearIcon : Icon
     {
 
         static GearIcon()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GearIcon), new FrameworkPropertyMetadata(typeof(GearIcon)));
         }
-
-        public GearIcon()
-        {
-            this.MouseDown += GearIcon_MouseDown;           
-        }
-
-        private void GearIcon_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (Command != null) Command.Execute(e.OriginalSource);
-        }
-
-        public static DependencyProperty CommandProperty = DependencyProperty.Register("Command", typeof(ICommand), typeof(GearIcon), new PropertyMetadata(new DelegateCommand(new Action(() => { }))));
-        public ICommand Command { set => SetValue(CommandProperty, value); get => (ICommand)GetValue(CommandProperty); }
     }
 }

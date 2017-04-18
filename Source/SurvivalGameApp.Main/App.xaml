@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:SurvivalGameApp.Main"
              Startup="Application_Startup">
     <Application.Resources>
-        <FontFamily x:Key="TopSecret">"pack://application:,,,/SurvivalGameApp.Main;component/Resources/Fonts/#Top Secret</FontFamily>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SurvivalGameApp.Main;component/Styles/Style.xaml" />
+                <ResourceDictionary Source="/SurvivalGameApp.Main;component/Styles/Font.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

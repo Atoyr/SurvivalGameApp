@@ -8,11 +8,12 @@ using System.Windows.Controls;
 
 namespace SurvivalGameApp.Main.Controls
 {
-    public class CaptionBar : ContentControl
+    public class Icon : Button
     {
-        static CaptionBar()
+        static Icon()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CaptionBar), new FrameworkPropertyMetadata(typeof(CaptionBar)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(Icon), new FrameworkPropertyMetadata(typeof(Icon)));
         }
+
     }
 }

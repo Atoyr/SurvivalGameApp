@@ -2,8 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:SurvivalGameApp.Main.Themes">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.Icon.xaml" />
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.TimeLabel.xaml" />
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.GearIcon.xaml" />
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.PowerIcon.xaml" />
+        <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.CaptionBar.xaml" />
     </ResourceDictionary.MergedDictionaries> 
 </ResourceDictionary>

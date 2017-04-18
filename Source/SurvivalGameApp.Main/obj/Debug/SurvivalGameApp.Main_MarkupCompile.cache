@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\private\source\SurvivalGameApp\Source\SurvivalGameApp.Main\App.xaml
-9-894625150
+14-1713708614
 
-211717026380
+23-584592023
 81-931935890
-Controls\UserControl1.xaml;Controls\UserControl2.xaml;Themes\Generic.CaptionBar.xaml;Themes\Generic.GearIcon.xaml;Themes\Generic.PowerIcon.xaml;Themes\Generic.TimeLabel.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
+Controls\UserControl1.xaml;Controls\UserControl2.xaml;Styles\Font.xaml;Styles\Style.CaptionButton.xaml;Styles\Style.Icon.xaml;Styles\Style.xaml;Themes\Generic.CaptionBar.xaml;Themes\Generic.GearIcon.xaml;Themes\Generic.Icon.xaml;Themes\Generic.PowerIcon.xaml;Themes\Generic.TimeLabel.xaml;Themes\Generic.xaml;Views\MenuView.xaml;Views\Shell.xaml;
 
 False
 
