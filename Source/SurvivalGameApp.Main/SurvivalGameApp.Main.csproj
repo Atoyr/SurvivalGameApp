@@ -114,9 +114,13 @@
     </Compile>
     <Compile Include="Command\BackOrCloseWindowCommand.cs" />
     <Compile Include="Command\UserCommand.cs" />
+    <Compile Include="Common\CaptionButtonMode.cs" />
+    <Compile Include="Common\InternalExtensions.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\WindowAction.cs" />
     <Compile Include="Controls\CaptionBar.cs" />
-    <Compile Include="Controls\CaptionBarSystemButton.cs" />
+    <Compile Include="Controls\CaptionButton.cs" />
+    <Compile Include="Controls\SystemButtons.cs" />
     <Compile Include="Controls\GearIcon.cs" />
     <Compile Include="Controls\Icon.cs" />
     <Compile Include="Controls\PowerIcon.cs" />
@@ -193,7 +197,7 @@
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <DependentUpon>Style.xaml</DependentUpon>
     </Page>
-    <Page Include="Styles\Style.Icon.xaml">
+    <Page Include="Styles\Style.Icons.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <DependentUpon>Style.xaml</DependentUpon>
@@ -203,6 +207,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Generic.CaptionBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <DependentUpon>Generic.xaml</DependentUpon>
+    </Page>
+    <Page Include="Themes\Generic.CaptionButton.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <DependentUpon>Generic.xaml</DependentUpon>
@@ -218,6 +227,11 @@
       <DependentUpon>Generic.xaml</DependentUpon>
     </Page>
     <Page Include="Themes\Generic.PowerIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <DependentUpon>Generic.xaml</DependentUpon>
+    </Page>
+    <Page Include="Themes\Generic.SystemButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
       <DependentUpon>Generic.xaml</DependentUpon>

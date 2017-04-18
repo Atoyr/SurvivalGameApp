@@ -7,5 +7,7 @@
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.GearIcon.xaml" />
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.PowerIcon.xaml" />
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.CaptionBar.xaml" />
+        <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.CaptionButton.xaml" />
+        <ResourceDictionary Source="/SurvivalGameApp.Main;component/Themes/Generic.SystemButtons.xaml" />
     </ResourceDictionary.MergedDictionaries> 
 </ResourceDictionary>

@@ -27,10 +27,7 @@
                                         Orientation="Horizontal" Margin="5"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Top">
-                                <Button Content="0" Style="{DynamicResource CaptionButtonStyleKey}" Height="23"/>
-                                <Button Content="1" Style="{DynamicResource CaptionButtonStyleKey}" Height="23" />
-                                <Button Content="2" Style="{DynamicResource CaptionButtonStyleKey}" Height="23" />
-                                <Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" Height="23" />
+                                <local:SystemButtons />
                             </StackPanel>
                         </Grid>
                     </Border>
