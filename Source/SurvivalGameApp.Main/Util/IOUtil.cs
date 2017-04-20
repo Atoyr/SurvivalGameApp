@@ -40,6 +40,16 @@ namespace SurvivalGameApp.Main.Util
             }
         }
 
+        public static bool WriteTextFile(string contents, string filePath)
+        {
+            return WriteTextFile(contents, filePath, Encoding.Default, true);
+        }
+
+        public static bool WriteTextFile(string contents, string filePath, bool isOverwrite)
+        {
+            return WriteTextFile(contents, filePath, Encoding.Default, isOverwrite);
+        }
+
         public static bool WriteTextFile(string contents, string filePath,Encoding encoding, bool isOverwrite)
         {
             if (!Directory.Exists(Path.GetDirectoryName(filePath)))

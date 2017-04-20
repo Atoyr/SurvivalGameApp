@@ -3,5 +3,6 @@
                     xmlns:local="clr-namespace:SurvivalGameApp.Main.Styles">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SurvivalGameApp.Main;component/Styles/Style.CaptionButton.xaml" />
+        <ResourceDictionary Source="/SurvivalGameApp.Main;component/Styles/Style.Shell.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

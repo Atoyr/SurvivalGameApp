@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using SurvivalGameApp.Main.Util;
 
 namespace SurvivalGameApp.Main.Common
 {
@@ -25,5 +26,29 @@ namespace SurvivalGameApp.Main.Common
 
         [DataMember(Name = "Background")]
         public string Background { set; get; } = string.Empty;
+
+        public static ApplicationContext RoadSetting(string path)
+        {
+            try
+            {
+                return JsonUtil.DeserializeJson<ApplicationContext>( IOUtil.ReadTextFile(path));
+            }
+            catch
+            {
+                return new ApplicationContext();
+            }
+        }
+
+        public static bool SaveSetting(ApplicationContext appContext ,string path)
+        {
+            try
+            {
+                return IOUtil.WriteTextFile(JsonUtil.SerializeJson<ApplicationContext>(appContext),path);
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

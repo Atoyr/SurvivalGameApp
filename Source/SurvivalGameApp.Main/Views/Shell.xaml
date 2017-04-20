@@ -8,13 +8,14 @@
         xmlns:control="clr-namespace:SurvivalGameApp.Main.Controls"
         xmlns:local="clr-namespace:SurvivalGameApp.Main.Views"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Topmost="True"
         Loaded="Window_Loaded"
-        Background="#99999999"
-        Title="テストタイトル"
+        x:Name="shell"
+        Background="{Binding ApplicationContext.Background, Converter={StaticResource ColorCodeToSolidBrushConverter}}"
+        Title="{Binding ApplicationContext.Title}"
         mc:Ignorable="d">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="{x:Static SystemParameters.CaptionHeight}"
+                      GlassFrameThickness="0"
                       ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
     </WindowChrome.WindowChrome>
     <Window.Resources>

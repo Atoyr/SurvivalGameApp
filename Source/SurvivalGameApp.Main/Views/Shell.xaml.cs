@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.ServiceLocation;
+using SurvivalGameApp.Main.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -23,7 +25,20 @@ namespace SurvivalGameApp.Main.Views
     {
         const int GWL_STYLE = -16;
         const int WS_SYSMENU = 0x00080000;
+        const int CYCAPTION = 0x04;
+        const int CXFRAME = 0x20;
+        const int CYFRAME = 0x21;
+        const int CXPADDEDBORDER = 92;
 
+        //public static readonly DependencyProperty BorderWidthProperty = DependencyProperty.Register("BorderWidth", typeof(int), typeof(Window), new FrameworkPropertyMetadata(0));
+        //public static readonly DependencyProperty BorderHeightProperty = DependencyProperty.Register("BorderHeight", typeof(int), typeof(Window), new FrameworkPropertyMetadata(0));
+        //public static readonly DependencyProperty CaptionHeightProperty = DependencyProperty.Register("CaptionHeight", typeof(int), typeof(Window), new FrameworkPropertyMetadata(0));
+        //public static readonly DependencyProperty PaddingThcknessProperty = DependencyProperty.Register("PaddingThckness", typeof(int), typeof(Shell), new FrameworkPropertyMetadata(0));
+
+        //public int BorderWidth { set => SetValue(BorderWidthProperty, value); get => (int)GetValue(BorderWidthProperty); }
+        //public int BorderHeight { set => SetValue(BorderHeightProperty, value); get => (int) GetValue(BorderHeightProperty); }
+        //public int CaptionHeight { set => SetValue(CaptionHeightProperty, value); get => (int) GetValue(CaptionHeightProperty); }
+        //public int PaddingThckness { set => SetValue(PaddingThcknessProperty, value); get => (int)GetValue(PaddingThcknessProperty); }
 
         public Shell()
         {
@@ -42,14 +57,40 @@ namespace SurvivalGameApp.Main.Views
             DebugTextBlock.Inlines.Add("Width ");
             DebugTextBlock.Inlines.Add(this.Width.ToString());
             DebugTextBlock.Inlines.Add(new LineBreak());
+            ResetActualMinSize();
+            this.Closed += Shell_Closed;
+        }
 
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int GetSystemMetrics(int nIndex);
+        protected void ResetActualMinSize()
+        {
+            //this.WindowState = WindowState.Maximized;
+
+            //// Gets the window frame thickness.
+            //Version ver = Environment.OSVersion.Version;
+            //if ((ver.Major > 6) || ((ver.Major == 6) && (ver.Minor >= 1)))
+            //{   // Windows7 or later.
+            //    PaddingThckness = GetSystemMetrics(CXPADDEDBORDER);
+            //}
+            //BorderWidth = GetSystemMetrics(CXFRAME);
+            //BorderHeight = GetSystemMetrics(CYFRAME);
+            //CaptionHeight = GetSystemMetrics(CYCAPTION);
+        }
+
+
+
+        private void Shell_Closed(object sender, EventArgs e)
+        {
+            //ApplicationContext a = ServiceLocator.Current.GetInstance<ApplicationContext>();
+            //ApplicationContext.SaveSetting(a, @"config/applicationConfing.json");
         }
 
         private void BindingSetting()
         {
-            SetBinding(TitleProperty, "Title");
-            SetBinding(WidthProperty, "Width");
-            SetBinding(HeightProperty, "Height");
+            //SetBinding(TitleProperty, "Title");
+            //SetBinding(WidthProperty, "Width");
+            //SetBinding(HeightProperty, "Height");
         }
 
         protected override void OnSourceInitialized(EventArgs e)

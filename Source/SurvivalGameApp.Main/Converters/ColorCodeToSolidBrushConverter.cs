@@ -9,7 +9,7 @@ using System.Windows.Media;
 namespace SurvivalGameApp.Main.Converters
 {
     [ValueConversion(typeof(string), typeof(SolidColorBrush))]
-    public class ColorCodeToSolidBrushConverter
+    public class ColorCodeToSolidBrushConverter : IValueConverter
     {
 
         /// <summary>
@@ -23,23 +23,31 @@ namespace SurvivalGameApp.Main.Converters
         public object Convert(object value, Type targetType,
                         object parameter, System.Globalization.CultureInfo culture)
         {
-
-            if (value is string str && str[0] == '#' && (str.Length == 7 || str.Length == 9))
+            Brush brush = new SolidColorBrush(Colors.Transparent);
+            if (value is string str && (str.Length == 7 || str.Length == 9) && str[0] == '#')
             {
-                if(str.Length == 7)
-                {
-                    //int red = 
-                }
-                else
-                {
+                var color = ColorConverter.ConvertFromString(str);
+                brush = new SolidColorBrush((Color)color );
+            }
+            return brush;
+        }
 
-                }
-            }
-            else
+        /// <summary>
+        /// 値を変換します。(未実装)
+        /// </summary>
+        /// <param name="value">バインディング ターゲットによって生成される値。</param>
+        /// <param name="targetType">変換後の型。</param>
+        /// <param name="parameter">使用するコンバーター パラメーター</param>
+        /// <param name="culture">コンバーターで使用するカルチャ。</param>
+        /// <returns>変換された値</returns>
+        public object ConvertBack(object value, Type targetType,
+                        object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is SolidColorBrush brush)
             {
-                return new SolidColorBrush(Colors.Transparent);
+                return brush.Color;
             }
-            return new SolidColorBrush(Colors.Transparent);
+            return Colors.Transparent;
         }
     }
 }
