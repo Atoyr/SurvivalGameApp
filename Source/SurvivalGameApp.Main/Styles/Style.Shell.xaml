@@ -3,11 +3,6 @@
                     xmlns:local="clr-namespace:SurvivalGameApp.Main.Views"
                     xmlns:shell="http://schemas.microsoft.com/netfx/2009/xaml/presentation">
     <Style TargetType="{x:Type local:Shell}">
-        <Setter Property="shell:WindowChrome.WindowChrome">
-            <Setter.Value>
-                <shell:WindowChrome />
-            </Setter.Value>
-        </Setter>
         <Setter Property="Template" >
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Shell}">

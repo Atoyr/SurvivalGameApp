@@ -10,15 +10,16 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Loaded="Window_Loaded"
         x:Name="shell"
+        WindowStyle="None"
+        AllowsTransparency="True"
         Background="{Binding ApplicationContext.Background, Converter={StaticResource ColorCodeToSolidBrushConverter}}"
         Title="{Binding ApplicationContext.Title}"
         mc:Ignorable="d">
-    <WindowChrome.WindowChrome>
+    <!--<WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="{x:Static SystemParameters.CaptionHeight}"
-                      GlassFrameThickness="0"
                       ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
-    </WindowChrome.WindowChrome>
-    <Window.Resources>
+    </WindowChrome.WindowChrome>-->
+    <!--<Window.Resources>
         <Storyboard x:Key="OnLoaded1">
             <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="button" Storyboard.TargetProperty="(UIElement.Visibility)">
                 <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
@@ -31,7 +32,7 @@
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
         </EventTrigger>
-    </Window.Triggers>
+    </Window.Triggers>-->
     <Border BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource FindAncestor ,AncestorType={x:Type Window}}}" 
             BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor ,AncestorType={x:Type Window}}}">
         <Border.Effect>
@@ -40,7 +41,7 @@
                           BlurRadius="8" />
         </Border.Effect>
         <DockPanel>
-            <control:CaptionBar DockPanel.Dock="Top" >
+            <control:CaptionBar DockPanel.Dock="Top" Background="Black" >
                 <Button x:Name="button" Content="AAA" />
             </control:CaptionBar>
             <Grid>

@@ -57,28 +57,8 @@ namespace SurvivalGameApp.Main.Views
             DebugTextBlock.Inlines.Add("Width ");
             DebugTextBlock.Inlines.Add(this.Width.ToString());
             DebugTextBlock.Inlines.Add(new LineBreak());
-            ResetActualMinSize();
             this.Closed += Shell_Closed;
         }
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int GetSystemMetrics(int nIndex);
-        protected void ResetActualMinSize()
-        {
-            //this.WindowState = WindowState.Maximized;
-
-            //// Gets the window frame thickness.
-            //Version ver = Environment.OSVersion.Version;
-            //if ((ver.Major > 6) || ((ver.Major == 6) && (ver.Minor >= 1)))
-            //{   // Windows7 or later.
-            //    PaddingThckness = GetSystemMetrics(CXPADDEDBORDER);
-            //}
-            //BorderWidth = GetSystemMetrics(CXFRAME);
-            //BorderHeight = GetSystemMetrics(CYFRAME);
-            //CaptionHeight = GetSystemMetrics(CYCAPTION);
-        }
-
-
 
         private void Shell_Closed(object sender, EventArgs e)
         {
