@@ -27,6 +27,11 @@ namespace SurvivalGameApp.Main.Common
         [DataMember(Name = "Background")]
         public string Background { set; get; } = string.Empty;
 
+        internal class Module
+        {
+            string AssemblyName { set; get; }
+        }
+
         public static ApplicationContext RoadSetting(string path)
         {
             try
@@ -39,11 +44,11 @@ namespace SurvivalGameApp.Main.Common
             }
         }
 
-        public static bool SaveSetting(ApplicationContext appContext ,string path)
+        public bool SaveSetting(string path)
         {
             try
             {
-                return IOUtil.WriteTextFile(JsonUtil.SerializeJson<ApplicationContext>(appContext),path);
+                return IOUtil.WriteTextFile(JsonUtil.SerializeJson<ApplicationContext>(this),path);
             }
             catch
             {
