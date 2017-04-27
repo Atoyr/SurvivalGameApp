@@ -27,10 +27,8 @@ namespace SurvivalGameApp.Main.Common
         [DataMember(Name = "Background")]
         public string Background { set; get; } = string.Empty;
 
-        internal class Module
-        {
-            string AssemblyName { set; get; }
-        }
+        [DataMember(Name = "Module")] 
+        public List<ModuleInfo> ModuleList { set; get; }
 
         public static ApplicationContext RoadSetting(string path)
         {
@@ -55,5 +53,18 @@ namespace SurvivalGameApp.Main.Common
                 return false;
             }
         }
+    }
+
+    [DataContract]
+    public class ModuleInfo
+    {
+        [DataMember(Name = "Assembly")]
+        string AssemblyName { set; get; } = string.Empty;
+        [DataMember(Name = "Namespace")]
+        string Namespace { set; get; } = string.Empty;
+        [DataMember(Name = "Module")]
+        string MainModuleClassName { set; get; } = string.Empty;
+        [DataMember(Name = "ProgramInfo")]
+        string ProgramInfoClassName { set; get; } = string.Empty;
     }
 }

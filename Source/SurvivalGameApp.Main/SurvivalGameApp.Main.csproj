@@ -133,6 +133,7 @@
       <DependentUpon>UserControl2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\ColorCodeToSolidBrushConverter.cs" />
+    <Compile Include="Interfaces\IProgramInfo.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
     <Compile Include="Util\IOUtil.cs" />
     <Compile Include="Util\JsonUtil.cs" />
