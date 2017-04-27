@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurvivalGameApp.Main", "Sou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "Source\WpfApplication1\WpfApplication1.csproj", "{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurvivalGameApp.Configer", "SurvivalGameApp.Configer\SurvivalGameApp.Configer.csproj", "{244C874D-50A9-4462-8A22-3B74E103A068}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{244C874D-50A9-4462-8A22-3B74E103A068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{244C874D-50A9-4462-8A22-3B74E103A068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{244C874D-50A9-4462-8A22-3B74E103A068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{244C874D-50A9-4462-8A22-3B74E103A068}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +36,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{661469C1-C97D-4441-BADA-38EEDFFAE3C0} = {A2DB777E-FA7B-4CE5-9AD0-D356837A08A3}
 		{5AE6C166-FB2F-407A-8753-8A9BDA0F4C3C} = {A2DB777E-FA7B-4CE5-9AD0-D356837A08A3}
+		{244C874D-50A9-4462-8A22-3B74E103A068} = {A2DB777E-FA7B-4CE5-9AD0-D356837A08A3}
 	EndGlobalSection
 EndGlobal
